@@ -1,0 +1,180 @@
+@charset "UTF-8";
+/* aside Area */
+aside .showBar{visibility: visible;}
+aside ul{
+	visibility: hidden;
+	position: fixed;
+	right: 1rem;
+	bottom : 2rem;
+	width: 3rem;
+}
+aside ul li{
+	width: 100%;
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 1rem;
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+	border-bottom: 1px solid white;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none;
+}
+aside ul li:last-child{border: 0;}
+aside ul li img{
+	width: 1rem;
+}
+aside a:link, aside a:visited, aside a:hover{
+	color: white;
+	font-weight: bold;
+	display: block;
+}
+/* Section Area */
+section{
+	margin-bottom: 1.2rem;
+}
+section #itemArea{
+	margin-bottom: 1.2rem;
+	height: 25rem;
+}
+section #itemArea h2{
+	font-size: 1.8rem;
+	margin-bottom: 0.5rem;
+} 
+section #itemArea .price{
+	font-size: 1.3rem;
+}
+section #itemArea img, #itemArea > div{
+	width: 50%;
+	display: inline-block;
+	float: left;
+}
+section #itemArea img  {
+	height: 100%;
+}
+section #itemArea > div{
+	height: 100%;
+	padding-left: 1rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+}
+#itemArea .amount{
+	margin-top: 0.8rem;
+}
+#itemArea div .amount input{
+	width: 1.3rem;
+	height: 1.3rem;
+	font-size: 1rem;
+	text-align: center;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border:1px solid #ccc;
+	padding: 0;
+}
+#itemArea div .amount .countName{
+	font-size: 1rem;
+	padding-right: 0.2rem;
+}
+#itemArea div .amount .countBtn{
+	width: 1.3rem;
+	height: 1.3rem;
+	display: inline-block;
+	background-color: #ccc;
+	line-height: 1.1rem;
+	cursor: pointer;
+	font-size: 1rem;
+	text-align: center;
+	-ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none;
+}
+#itemArea div .amount .countBtn:hover{
+	background-color: #1d69f8;
+	color: white;
+}
+#itemArea div .color{
+	margin-top: 0.8rem;
+	width: 100%;
+}
+#itemArea div .color span{
+	padding-right: 0.2rem;
+}
+#itemArea div .color select{
+	font-size: 0.7rem;
+	padding: 0.3rem;
+	border: 1px solid #ccc;
+}
+#btnArea{
+	width: calc(100% - 1rem);
+	position: absolute;
+	bottom: 0;
+}
+section #itemArea #btnArea span{
+	display: inline-block;
+	float:left;
+	width: 50%;
+	text-align: center;
+	background-color: black;
+	color: white;
+	cursor: pointer;
+	font-size: 1.3rem;
+	font-weight: bold;
+	padding: 1.5rem 0;
+	-ms-user-select: none; -moz-user-select: -moz-none; -webkit-user-select: none; -khtml-user-select: none; user-select:none;
+}
+section #itemArea #btnArea span:last-child{
+	border-left: 1px solid white;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+section #itemArea #btnArea .hide{
+	display: none;
+}
+section #itemArea #btnArea span.chose{
+	border-left:1px solid white;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+section #itemArea #btnArea .buybtn{
+	width: 100%;
+	background-color: black;
+	border-bottom: 1px solid white;
+	color: white;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+section #itemArea #btnArea .cartbtn img{
+	width: 1.35rem;
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+section #itemArea::after{
+	content: "";
+	clear: both;
+	display: block;
+}
+section #itemDetail img{
+	width: 100%;
+}
+section #itemDetail .default{
+		display: block;
+}
+section #itemDetail .mobile{
+	display: none;
+}
+@media only screen and (max-width: 1024px) {
+	aside ul{
+		width: 5rem;
+	}
+	aside ul li{
+		height: 3rem;
+		line-height: 3rem;
+	}
+}

@@ -4,14 +4,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>kr.gudi</groupId>
 	<artifactId>web</artifactId>
-	<name>TeamProject</name>
+	<name>WebLegacy</name>
 	<packaging>war</packaging>
-	<version>1.0.0-BUILD-SNAPSHOT</version>
+	<version>1</version>
 	<properties>
-		<java-version>1.6</java-version>
-		<org.springframework-version>3.1.1.RELEASE</org.springframework-version>
-		<org.aspectj-version>1.6.10</org.aspectj-version>
-		<org.slf4j-version>1.6.6</org.slf4j-version>
+		<encoding-type>UTF-8</encoding-type>
+		<java-version>1.8</java-version>
+		<org.springframework-version>4.3.25.RELEASE</org.springframework-version>
+		<org.aspectj-version>1.9.5</org.aspectj-version>
+		<org.slf4j-version>1.7.29</org.slf4j-version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -38,6 +39,11 @@
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjweaver</artifactId>
+		    <version>1.9.4</version>
 		</dependency>	
 		
 		<!-- Logging -->
@@ -113,9 +119,66 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.7</version>
+			<version>4.12</version>
 			<scope>test</scope>
-		</dependency>        
+		</dependency>
+		
+		<!-- Apache Commons Util (IO, FileUpload) -->
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>2.6</version>
+		</dependency>
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>1.4</version>
+		</dependency>
+
+		<!-- myBatis -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>3.5.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis-spring</artifactId>
+		    <version>2.0.2</version>
+		</dependency>
+		
+		<!-- Json -->
+		<dependency>
+		    <groupId>net.sf.json-lib</groupId>
+		    <artifactId>json-lib</artifactId>
+		    <version>2.4</version>
+		    <classifier>jdk15</classifier>
+		</dependency>
+		
+		<!-- jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.6.4</version>
+		</dependency>
+		
+		<!-- webjars -->
+		<dependency>
+		    <groupId>org.webjars.bower</groupId>
+		    <artifactId>jquery</artifactId>
+		    <version>3.4.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap</artifactId>
+		    <version>3.4.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>angularjs</artifactId>
+		    <version>1.7.8</version>
+		</dependency>
+		
 	</dependencies>
     <build>
         <plugins>
@@ -138,8 +201,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.5.1</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>${java-version}</source>
+                    <target>${java-version}</target>
+                    <encoding>${encoding-type}</encoding>
                     <compilerArgument>-Xlint:all</compilerArgument>
                     <showWarnings>true</showWarnings>
                     <showDeprecation>true</showDeprecation>

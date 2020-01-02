@@ -1,0 +1,54 @@
+@charset "UTF-8";
+html{font-size: 14px;}
+body{
+	padding: 1rem 1.5rem;
+	box-sizing: border-box;
+	position: relative;
+}
+div {margin-top: 1em;}
+label {
+		margin-bottom: 0.5rem;
+		display: block;
+		font-size: 1.5rem;
+}
+textarea {resize: none;}
+input, textarea {			
+	width: 100%;
+	text-indent: 0.5rem;
+	padding: 0.5rem 0;
+	font-size: 1.3rem;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+}
+button {
+		margin-left: 0.5rem;
+		border:0;
+		background-color: #ccc;
+		padding: 1rem;
+		border-radius: 3px;
+		cursor: pointer;
+		font-weight: bold;
+		font-size: 1.5rem;
+}
+
+button:hover{
+	color: white;
+	background-color: #1d69f8;
+}
+#b_all{ text-align: right;}
+
+@media only screen and (min-width: 501px){
+	html{
+		font-size: 28px;
+	}
+}
+
+
+select {
+	width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+}
+	
+	
+}

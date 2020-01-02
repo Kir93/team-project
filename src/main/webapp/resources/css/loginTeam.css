@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+section  { min-height: 60vh; margin: 0; 
+			text-align: center;}
+   
+ .login { 
+    padding: 2rem 0;
+ 	width: 500px;
+    margin: 0 calc((100% - 500px) / 2);
+/*  	position: absolute; */
+/* 	top:50%; */
+/* 	left: 50%; */
+/* 	transform: translate(-50%,-50%);  */
+         }  
+
+.h {margin: 0;
+	font-size: 2rem;
+	color: black;}          
+                    
+.login h2 {
+	margin-bottom: 1rem; 
+	text-align: center; 
+	font-size: 1.7rem;
+	}
+.login > ul li{margin-bottom: 0.5rem; text-align: left; line-height: 0; }	
+.login > ul li input {width:100%; padding: 0.5rem 0; text-indent: 0.5rem; display: block; font-size: 0.7rem;}
+.login > ul li input::-webkit-input-placeholder {font-size: 0.5rem; color: #000000; text-indent: 0.5rem;}
+.login > ul li input[type="checkbox"] {position:absolute; left: -300rem; }
+.login > ul li input[type="checkbox"] + label:before {
+	content: ""; 
+	display: inline-block; 
+	margin-right: 0.3rem; 
+	width: 0.5rem; 
+	height: 0.5rem; 
+	border:1px solid #333; 
+	background: #fff; 
+	vertical-align: -0.1rem;
+}
+
+.login > ul li label {font-size: 0.6rem;} 
+.login > ul li input[type="checkbox"]:checked + label:before {background: #808080;}
+.login button {
+	width: 100%;
+	padding: 0.5rem 0;
+	background-color: #ccc;
+	font-size: 1rem;
+	border-radius: 3px; 
+	border: 0;
+	cursor: pointer;
+	font-weight: bold;
+}
+.login button:hover{
+	color: white; background-color: #1d69f8;
+}
+
+
+.login div { padding: 0 0 1rem;}
+.login div ul {display: flex; justify-content: center;}
+.login div ul li { position: relative; padding: 0 0.5rem;}
+.login div ul li ~ li:after {
+	content: ""; position: absolute; left: 0; top:0.5rem; height: 0.5rem; 
+	width: 1px; background: black; transform: rotate(25deg);
+}
+.login div ul li a {font-size: 0.7rem;}
+.login div ul li a:hover{color: #8000ff;}
+
+
+
+
