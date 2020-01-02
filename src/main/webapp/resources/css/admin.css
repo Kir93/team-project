@@ -1,0 +1,322 @@
+@charset "UTF-8"; 
+html{height: 100%;}
+body{height: 100%;}
+body, p, h1, h2, h3, ul, li, a, textarea{margin: 0; padding: 0; font-family: 'Nanum Gothic', sans-serif; text-decoration: none;}
+section{background-color: #383838; color: white; padding: 0 3.125rem; min-height: calc(100% - 8.313rem); width: 100%; box-sizing: border-box;}
+ul{list-style: none; clear: both; width: 100%;}
+form{width: 100%;  -webkit-appearance:none; }
+input{background-color: #494945; color: white; padding: 0.3125rem 0 ; border: 0; cursor: pointer;}
+strong, h4{font-weight: 400;}
+hr{width: 95%; border-color: #ffffff; border: 0.5px solid; }
+.show{display:block !important;}
+#Register, #ItemList, #Main, #Delivery,#Inquiry,#Member,#Money{display:none;}
+ul::after, h3::after{
+	content: "";
+	clear: both;
+	display: block;
+	}
+.inputarea label {
+    vertical-align:middle;
+    cursor:pointer;
+    display:inline-block;
+    background:#777;
+    color:#fff;
+    text-align:center;
+    margin: 0 1.25rem 0 0;
+    padding: 0.5rem 0;
+    font-size: 0.75rem;
+}
+.item_inventory label {
+    vertical-align:middle;
+    cursor:pointer;
+    display:inline-block;
+    height:1.875rem;
+    background:#777;
+    text-align:center;
+}
+.item_inventory2 label {
+    vertical-align:middle;
+    cursor:pointer;
+    display:inline-block;
+    height:1.875rem;
+    background:#777;
+    text-align:center;
+}
+input[type=text] {
+    vertical-align:middle;
+    display:inline-block;
+    line-height:1.75rem;
+    font-size:0.6875rem;
+    padding:0;
+    border:0;
+    border:1px solid #777;
+    padding: 0.5rem 2.58rem 0.5rem 0.8rem;
+    -webkit-border-radius:0;
+    -webkit-appearance:none;
+}
+input[type=file]{
+    vertical-align:middle;
+    display:inline-block;
+    line-height:1.75rem;
+    font-size:0.6875rem;
+    padding:0;
+    border:0;
+    border:1px solid #777;
+    padding: 0.5rem 2.58rem 0.5rem 0.8rem;
+    width: calc(70% - 4.76rem);
+    -webkit-border-radius: 0;
+    -webkit-appearance:none;
+}
+input[type=submit]{
+	-webkit-appearance:none;
+}
+/*nav area */
+nav{
+	width: 100%;
+	background-color: #f2f2f2;
+	height: 3.125rem;
+	box-sizing: border-box;
+ 
+	cursor: pointer;
+}
+nav ul{
+	width: 100%;
+	
+}
+nav li{
+	width: calc(100% / 7);
+	height: 100%;
+	float: left;
+	text-align: center;
+}
+
+nav label{
+	width: 100%;
+	display: block;
+	cursor: pointer;
+	height: 3.125rem;
+	line-height: 3.125rem;
+}
+#nav_tab input{display: none;}
+#nav_tab input:checked + label{
+	background-color: #ffe3c8;
+	border: 0;
+}
+.logo:hover{
+	color: #ffac59;
+}
+/*Modal area*/
+.modal{
+	   position: absolute;
+	   top:0;
+	   left:0;
+	   width: 100%;
+	   height: 100%;
+	   display: flex;
+	   justify-content: center;
+	   align-items: center;
+}
+.modal__overlay{
+	background-color: rgba(0, 0, 0, 0.4);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+.modal__content{
+	color:black;
+	background-color: #ffffff;
+	position: relative;
+	width: 25%;
+	border-radius:10px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	padding: 2rem; 
+	min-width: 400px;
+}
+.hidden{
+	display: none;
+}
+.modal hr{width:100%; margin: 0 0 1.25rem 0; display: inline-block;}
+ /*Close Button*/
+.close {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+.close:hover, .close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+
+/* toggle switch
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+ 	bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switch input:checked + .slider {
+  background-color: #383838;
+}
+.switch input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #383838;
+}
+*/
+/* Rounded sliders */
+/* .slider.round { */
+/*   border-radius: 34px; */
+/* } */
+/* .slider.round:before { */
+/*   border-radius: 50%; */
+/* } */
+
+/*registration area */
+.title{text-align: center; font-size: 2.5rem; margin: 1.875rem; float: left; width: calc(100% - 3.75rem); font-weight: normal;}
+.title2{text-align: center; font-size: 2rem; margin: 1.25rem; font-weight: normal;}
+.subtitle {margin: 0.9375rem 1.05rem 0.9375rem 2.7rem; width: calc(100% - 3.75rem); display: inline-block; font-weight: normal;}
+.editerbtndiv { width: 100%;}
+/* .inputarea{margin: 1.825rem;} */
+}
+.inputarea{padding: 1.25rem 1.25rem 1.25rem 1.25rem; border: 2px solid; border-radius: 1.25rem; 
+			border-color: white; width: 34.38rem;
+			float: left;   box-sizing: border-box; margin: 1.825rem calc((100% - 34.3rem) / 2);
+}
+.li_tatle{width: 30%; text-align: center; float: left; line-height: 1.875rem;}
+.inputarea h1 {text-align: center;}
+.inputarea li{ width: 100%;  padding: 0;  box-sizing: border-box; margin: 0 0 0.5625rem 0; float: left;}
+.input_name{width: calc(70% - 4.76rem);}
+.input_price{width: calc(70% - 4.76rem);} 
+.input_explain1{width: calc(70% - 4.76rem);} /* .input_explain2{width: 70%; min-height: 500px;} 텍스트용*/
+.btnregister{text-align: center; margin-top: 1.875rem; width: 100%; display: inline-block;}
+.submit{padding: 1.25rem; width: 100%; float: left;}
+/*ItemList area*/
+-->	/*item status,memberstatus area*/
+.itemstatus{width:calc(100% - 5rem); float: left; margin: 1.875rem 1.875rem 1.875rem 2.5rem;; padding: 0.625rem; min-height: 100%; border: 0.5px solid; border-radius: 20px; box-sizing: border-box;}
+.itemstatus li{width: calc(100% / 4); text-align: center; float: left;}
+.itemstatus span{padding-left: 0.9375rem;  font-weight: bold; float: left; border-left: 0.5px solid; border-color: white; color: orange;}
+.itemstatus a{width: 100%; display: block; float: left;}
+.itemstatus strong{ float: left; width: 60%;}
+-->	/*inventory, area*/
+.item_inventory{width: calc(100% - 3.75rem); height: 20rem; float: left; margin: 0 1.875rem 0 1.875rem; box-sizing: border-box; overflow: auto; overflow-x: auto;}
+.item_inventory ul{width: 100%;}
+.item_inventory2{float: left; margin: 1.875rem 1.875rem 0; width: calc(100% - 4.81rem); box-sizing: border-box;}
+.item_name_li1{float: left; width: 15%; min-height: 1.875rem; text-align: center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.item_name_li2{float: left; width: 3%; min-height: 1.875rem; text-align:  center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.item_name_li3{float: left; width: 45%; min-height: 1.875rem; text-align: center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.item_inventory_li1{float: left; width: 15%; min-height: 5rem; text-align: center; border: 1px solid; border-color: white; line-height: 5rem;}
+.item_inventory_li2{float: left; width: 3%; min-height: 5rem; text-align:  center; border: 1px solid; border-color: white; line-height: 5rem;}
+.item_inventory_li3{float: left; width: 45%; min-height: 5rem; text-align: center; border: 1px solid; border-color: white; line-height: 5rem;}
+.btnset button{border:0; float: right; margin:0.625rem 0 0.625rem 0.625rem; background-color: #494945; color: white; cursor: pointer; padding: 0.875rem;}
+.btnset{border: 1px 0; border-color: white; height: 100%; width: calc(100% - 3.75rem); float: left; margin: 0 1.875rem;}
+/*answer area*/
+.answer{color: #004080;}
+.textAnswer{background-color: #777; color: #004080; width: calc(100% - 0.125rem); height: calc(100% - 0.125rem); resize: none; text-align: center; font-size: 1rem; border: 0; line-height: 2rem;}
+.textAnswer::placeholder{ color: #004080; font-size: 1rem; line-height: 4.875rem;}
+textarea:focus::-webkit-input-placeholder {color:transparent;}
+.panel {display: none; overflow: hidden;}
+/*main area*/
+#Main hr{width: 95.3%; border-color: #ffffff; border: 0.5px solid;}
+.order {margin: 0.625rem 1.875rem 1.25rem; width: calc(100% - 3.75rem); text-align: center; box-sizing: border-box; float: left;}
+.order li{border: 1px solid; border-color: white;  width: calc((100% - 2.5rem) / 3); float: left; height: calc(100% - 2.5rem); margin: 0.3125rem; padding: 1.25rem 0 0.625rem 0;}
+.order span{color: orange; font-size: 1.5rem;}
+.visitant {margin: 0.625rem 1.875rem 1.25rem; width: calc(100% - 3.75rem); text-align: center; box-sizing: border-box; float: left;}
+.visitant li{border: 1px solid; border-color: white;  width: calc((100% - 3.125rem) / 4); float: left; height: calc(100% - 2.5rem); margin: 0.3125rem; padding: 1.25rem 0 0.625rem 0;}
+.visitant span{color: #f2e6bd; font-size: 1.5rem;}
+.sales{margin: 0.625rem 1.875rem; width: calc(100% - 3.75rem); text-align: center; box-sizing: border-box; float: left;}
+.sales li{border: 1px solid; border-color: white;  width: calc((100% - 1.875rem) / 2); float: left; height: calc(100% - 2.5rem); margin: 0.3125rem; padding: 1.25rem 0 0.625rem 0;}
+.sales span{color: #4dafea; font-size: 1.5rem;}
+/*member status area*/
+.memberstatus{width:calc(100% - 5rem); float: left; margin: 1.875rem 1.875rem 1.875rem 2.5rem; padding: 0.625rem; min-height: 100%; border: 0.5px solid; border-radius: 20px; box-sizing: border-box;}
+.memberstatus li{width: calc(100% / 3); text-align: center; float: left;}
+.memberstatus span{padding-left: 0.9375rem;  font-weight: bold; float: left; border-left: 0.5px solid; border-color: white; color: orange;}
+.memberstatus a{width: 100%; display: block; float: left;}
+.memberstatus strong{ float: left; width: 60%;}
+.search{border: 1px 0; border-color: white; height: 100%; width: calc(100% - 3.75rem); float: right; margin: 0 1.875rem;}
+.search_array{border:0; float: right; margin:0.625rem 0 0.625rem 0.625rem; background-color: #494945; color: white; cursor: pointer; padding: 0.875rem;}
+.searchbar{float: left; width: 15%; margin: 0.625rem 0 0.625rem 0.625rem; padding: 0.25rem 0.625rem;}
+.search_btn{float: left; padding: 0.875rem; border: 0; margin: 0.625rem;  background-color: #494945; color: white; cursor: pointer;}
+/*sales status area */
+.salesStatus {width:calc(100% - 5rem); float: left; margin: 1.875rem 1.875rem 1.875rem 2.5rem;; padding: 0.625rem; min-height: 100%; border: 0.5px solid; border-radius: 20px; box-sizing: border-box;}
+.salesStatus li{ width: calc(100% / 2); text-align: center; float: left;}
+.salesStatus strong{width: 45%; margin: 5px 0; float: left;}
+.salesStatus span{margin: 5px 0; padding-left: 0.9375rem;  font-weight: bold; float: left; border-left: 0.5px solid; border-color: white; color: orange;}
+.a_line2{border-top: 0.3px solid;}
+/* Footer Area */
+footer{
+	text-align: center;
+	color: white;
+	padding: 2rem 0;
+	background-color: #383838;
+	border: 0;
+}
+/* 반응형*/
+@media (max-width : 1074px){
+	section{padding: 0;}
+
+}
+@media (min-width: 895px) and (max-width : 1073px){
+	nav li{font-size:  0.8rem;}
+}
+@media (min-width: 618px) and (max-width: 894px) {
+	.item_inventory{padding-bottom: 0;}
+	.item_inventory label{ font-size: 0.75em;}
+	.item_inventory2{padding-bottom: 0;}
+	.item_inventory2 label{ font-size: 0.75em;}
+	.itemstatus li{font-size: 0.7em;}
+	.itemstatus strong{width: 40%;}
+	.memberstatus strong{ float: left; width: 40%;}
+	.memberstatus li{ font-size: 0.7em;}
+	input[type=checkbox]{ width: 0.6875rem; height: 0.6875rem;}
+	nav li{font-size:  0.8rem;}
+}
+@media (max-width: 617px) {
+	.itemstatus li{font-size: 0.7rem; width: calc(100% / 2);}
+	.a_line{border-top: 0.3px solid;}
+	.itemstatus strong{width: 40%; margin: 5px 0;}
+	.itemstatus span{margin: 5px 0;}
+	.item_inventory label{ font-size: 0.5em;}
+	.item_inventory2 label{ font-size: 0.5em;}
+	.salesStatus {font-size: 0.7rem;}
+	.memberstatus strong{ float: left; width: 40%;}
+	.memberstatus li{ font-size: 0.7em;}
+	input[type=checkbox]{ width: 0.5rem; height: 0.625rem; margin: 0 0.0625rem 0 0.125rem;}
+	nav li{font-size:  0.7rem;}
+	.submit {width: 24.88rem;}
+}
+
+
+
