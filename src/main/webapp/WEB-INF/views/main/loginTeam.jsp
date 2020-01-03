@@ -42,9 +42,9 @@
 		   	</ul>
 		   <div>
 		   	<ul>
-				<li><a href= "join.html">회원가입 </a></li>
-				<li><a href= "id.html">아이디 찾기</a></li>
-				<li><a href= "password.html">비밀번호 찾기</a></li>	
+				<li><a href= "./join">회원가입 </a></li>
+				<li><a href= "./id">아이디 찾기</a></li>
+				<li><a href= "./password">비밀번호 찾기</a></li>	
 			 </ul>   
 		   </div>
 		   </div>

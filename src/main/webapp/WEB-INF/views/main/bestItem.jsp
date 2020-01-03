@@ -16,7 +16,7 @@
 	                <a href="/main/index">LOGO</a>
 	            </h1>
 	            <h2>
-	                <a href="/main/login">Login</a>
+	                <a href="/main/loginTeam">Login</a>
 	            </h2>
 	            <ul class="show">
 	                <li><a href="/main/mypage">회원정보</a></li>
