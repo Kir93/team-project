@@ -1,0 +1,208 @@
+@charset "UTF-8";
+.ova ul:after {display: table; content: ""; clear: both;}
+.bg1 {background-color: #be7c7c; font-weight: bold;}
+section li {box-sizing: border-box;}
+
+section .list1-2 ul {
+
+	border-style: solid;
+  	border-width: 0 1px 1px 1px;
+}
+section .list1-2 ul:first-child {
+	border-width: 1px 1px 1px 1px;
+}
+
+section h3 { font-size: 1.2rem;
+			 color: black; 
+			 text-decoration: underline;
+			 text-underline-position: under;
+			 
+			  }
+			  
+.list1 {
+	min-height: 15rem; 
+	margin: 0.6rem 0rem; 
+	font-size: 4rem;			
+}
+.list1-2 {padding: 0 1.4rem;}
+
+.list1-1 {font-size: 1rem;
+          padding: 0.5rem 0 0.5rem;
+          margin: 0 1.5rem;}
+
+.form {padding: 1rem 0 0 0}
+
+.list1 select {width: 7.8rem;
+    padding: 0.2rem 0.1rem;
+    font-size: 0.6rem;}
+
+section li {float: left; text-align: center; font-size:0.6rem; 
+padding-left: 0.2rem;}
+
+
+.list1-2 li {width: calc(100% / 8); border: 0; padding: 1rem 0;}
+.list1-2 .li2 {width: calc((100% / 8) * 2); border: 0; padding: 1rem 0;}
+.list1-2 .li1 {width: calc(100% / 10); border: 0; padding: 1rem 0;}
+ 
+section button {
+	background-color: #ccc;
+	padding: 0.5rem;
+	border-radius: 3px;
+	border: 0;
+	color: black;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 0.5rem;
+	float: right;
+    margin: 5px 44px;
+}
+section button:hover{
+	color: white; background-color: #1d69f8;
+}
+
+/* .list2 { */
+/* 	margin: 0.6rem 0em;  */
+/* 	font-size: 1rem; */
+/* 	text-align: center;			 */
+/* } */
+
+/* h3.list2-1 {padding: 0.9rem 0em;}  */
+/* .list2 form:after{ */
+/* 	content: ""; */
+/* 	clear: both; */
+/* 	display: blodk; */
+/* } */
+/* .list2 form label { */
+/* 	float: left; */
+/* } */
+
+/* .list2 form label span { */
+/* 	text-align: center; */
+/* 	padding: 0.5rem; */
+/* 	display: inline-block; */
+/* 	background-color: #ccc; */
+/* 	font-size: 0.9rem; */
+/* } */
+
+/* .list2 form label input { */
+/* 	position: absolute; */
+/* 	top: -30rem; */
+/* } */
+
+/* .list2 form input:checked+span { */
+/* 	background-color: #911; */
+/* 	color: #fff; */
+/* 	padding: 0.5rem; */
+/* } */
+
+/* .list2 form input{ */
+/* 	padding: 0.5rem; */
+/* 	border: 0;	 */
+/* } */
+
+/* .list2 form button{ */
+/* 	padding: 0.5rem; */
+/* 	background-color: #ccc; */
+/* 	border: 0; */
+/* } */
+
+/* .list2 form button:hover{ */
+/* 	background-color: #911; */
+/* 	color: #fff; */
+/* } */
+/* .list2-3 { */
+/* 	text-align: center; */
+/* 	display: inline-block; */
+/* } */
+
+.exchange::after{
+	content: "";
+	clear: both;
+	display: block;
+}
+
+/* modal CSS */
+#modal {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0px;
+    left: 0px;
+    display: none;
+     
+}
+#modal-body { 
+	background-color: black;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.5;
+}
+#popup {
+    background-color: white;
+/*     margin: 5% calc((100% - 500px) / 2); */
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width: 20rem;
+}
+#popup ul > li {text-align: center; margin: 0.3rem 0;}
+#popup ul > li label {font-size: 0.6rem; 
+					  padding: 0.3rem;
+                      margin: 0 1.7rem;
+                      width: 15rem;}
+#popup ul > li > input { margin: 0 2rem;
+                         width: 14.3rem; padding: 0.3rem;}
+/* #popup ul > li > #secession {width: 300px;} */
+
+#popup ul > li > select {padding: 0.3rem;
+    					  margin: 0 2rem;
+    					  width: 15rem; }
+
+
+
+#popup-head {height: 1rem;}
+#popup-head > button {
+	padding: 0 0.5rem;
+    display: inline-block;
+    float: right;
+    background: none;
+    border: 0;
+    margin: 0; 
+}
+#popup-head > button:focus {outline:none !important}
+#popup-head > button:hover {color: black;}
+
+.outbut { padding: 0.5rem 2rem;
+    	  margin: 1rem 2.8rem;
+    	  width: 15rem;
+    	  font-size: 0.6rem;
+}
+		 
+
+@media  (max-width: 700px){
+	section .list1-2 li {width: calc(100% / 8); border: 0; padding: 0.3rem 0; font-size: 0.6rem;}
+	.list1-2 .li2 {width: calc((100% / 4) * 2); border: 0; padding: 0.3rem 0;}
+ 	.list2-3 {padding: 0 30em;} 
+} 
+
+
+
+@media  (max-width: 700px){
+	section .list2-3 {padding: 0 0.9rem;}
+} 
+
+@media  (max-width: 700px){
+	section .list2-3 {padding: 0 0.9rem;}
+} 
+
+
+
+
+
+
+
+
+

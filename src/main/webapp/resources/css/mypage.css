@@ -1,0 +1,145 @@
+@charset "UTF-8";
+section{text-align: right;}
+section p { font-size: 1.2em;
+			text-decoration: underline;
+			text-underline-position: under;
+			padding: 1em 0;
+			text-align: left;		
+ }
+
+section table.type05 {
+	width: 100%;
+	font-size: 0.7em;
+	border-collapse: separate;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+
+section table.type05 th {
+    width: 30%;
+    padding: 1em 0.3em;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    background: #efefef;
+}
+section table.type05 td {
+    width: 70%;
+    padding: 1em 0.3em;
+    border-bottom: 1px solid #ccc;
+}
+
+section table input {text-indent: 0.5em; width:100%; 
+					 border: 1px solid #ccc; box-sizing: border-box; padding: 0.5em 0.3em; font-size: 1em;}
+section table input::-webkit-input-placeholder {color: #000000; text-indent: 0.5em; }
+
+section table select {border: 0; width:100%; padding: 0.5em 0.3em; font-size: 1em;
+					  text-indent: 0.5px; border: 1px solid #ccc;}
+
+section button {
+	font-size: 0.7em;
+	font-weight: bold;
+	padding: 1em;
+	border: 0;
+	background-color: #ccc;
+	border-radius: 3px;
+	margin: 0.5em 0;	
+	border-radius: 3px;
+	cursor: pointer;
+}
+section button:hover{ color: white; background-color: #1d69f8;}
+
+td.addr {
+	text-align: left;
+}
+
+td.addr input {
+	margin: 0.1rem;
+    text-indent: 0.5em; 
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5em 0.3em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+	
+}
+
+td.addr input:first-child {
+	width: 10rem;
+}
+
+td.addr button {
+	width: auto;
+	padding: 0.3rem;
+	margin: 0;
+	vertical-align: middle;
+}
+
+td.addr1-1 {
+    text-indent: 0.5em;
+    border: 0;
+    widsth: 100%;
+    box-sizing: border-box;
+    padding: 0.5em 0.3em;
+    font-size: 1em;
+    
+}
+
+.tel { 
+	width: 33%;
+	float: left;
+}
+
+/* modal CSS */
+#modal {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0px;
+    left: 0px;
+    display: none;
+     
+}
+#modal-body { 
+	background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+#popup {
+    background-color: white;
+/*     margin: 5% calc((100% - 500px) / 2); */
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width: 20rem;
+}
+#popup ul {margin: 0 2rem;}
+#popup ul > li {text-align: left; margin: 0.3rem 0;}
+#popup ul > li > label {font-size: 0.6rem;}
+#popup ul > li > input {width: 15rem; padding: 0.4rem;}
+/* #popup ul > li > #secession {width: 300px;} */
+#popup-head {height: 1rem;}
+#popup-head > button {
+	padding: 0 0.5rem;
+	display: inline-block;
+	float: right;
+	background: none;
+	border: 0; 
+}
+#popup-head > button:focus {outline:none !important;}
+#popup-head > button:hover {color: black;}
+
+.outbut { padding: 0.5rem 2rem;
+    	  margin: 1rem 2.5rem;
+    	  width: 15rem;
+    	  font-size: 0.6rem;
+}
+
+
+
+
+

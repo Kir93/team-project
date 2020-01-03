@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+
+.join { margin: 0 calc((100% - 500px) / 2);
+    	padding-bottom: 2.3rem;}
+ 
+section h3 {
+	font-size: 1rem;
+	margin: 1rem 0;
+}
+
+ul label {
+	font-size: 0.5rem;
+	font-weight: bold;
+
+	
+}
+
+ul input {
+	width: 100%; 
+	box-sizing: border-box;
+	padding: 0.5rem;
+	margin-bottom: 0.3rem;
+	font-size: 0.5rem;
+}
+
+ul input::-webkit-input-placeholder {
+	color: #000000;
+}
+
+section form ul li {
+	margin-top: 0.4rem;
+	font-size: 0.7rem;
+}
+
+ul li select {
+	width: 100%; 
+	box-sizing: border-box; 
+	padding: 0.5rem;
+	margin-bottom: 0.3rem;
+	font-size: 0.5rem;
+}
+
+ul span {
+	font-size: 0.8rem;
+}
+
+section button {
+	padding: 0.7rem 0;
+	width: 100%; 
+	box-sizing: border-box; 
+	background-color: #ccc;
+	font-size: 1rem;
+	color: #ffffff;
+	border-radius: 3px;
+	margin-top: 1rem;
+	border: 0;
+	cursor: pointer;	
+	color: black;
+}
+
+section button:hover {
+	color: white;
+	background-color: #1d69f8;
+}
+
+.addr {
+/* 	text-align: left; */
+}
+
+.addr input {
+	width: 40%; 
+	box-sizing: border-box;
+	float: left;
+}
+
+.addr button {
+	float: left;
+    width: auto;
+    padding: 0.4rem;
+    margin: 0.1rem 0.2rem 0.2rem 0.2rem;
+    vertical-align: middle;
+    font-size: 0.5rem;
+}
+.addr1 {width: 100%; 
+		box-sizing: border-box;
+		display: inline-block;}
+		
+.idpwd { padding: 0.5rem;}		
+		
+		
+		
+		
+		
+		

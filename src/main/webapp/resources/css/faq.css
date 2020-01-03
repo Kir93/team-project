@@ -67,8 +67,11 @@ ul::after{
 		font-weight: bold;
 		border-top: 1px solid;
 }
+<<<<<<< HEAD
 /* accordion */
 .panel{display: none;}
+=======
+>>>>>>> refs/remotes/origin/Kir93
 /* number */
 .number .left-arrow{
 	padding-right:0.2rem;
