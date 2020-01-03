@@ -15,7 +15,7 @@
 	 	<header>
 			<nav id = "nav_tab">
 				<ul>
-					<li><input id = "tab1" type = "radio" name = "tabs"><label for = "tab1" onclick = "home('./main')" class = "logo">LOGO</label></li>
+					<li><input id = "tab1" type = "radio" name = "tabs"><label for = "tab1" onclick = "home('/main/index')" class = "logo">LOGO</label></li>
 					<li><input id = "tab2" type = "radio" name = "tabs" checked="checked"><label for = "tab2" onclick = "menu('#Main')">Home</label></li>
 					<li><input id = "tab3" type = "radio" name = "tabs"><label for = "tab3" onclick = "menu('#ItemList')">상품관리</label></li>
 					<li><input id = "tab4" type = "radio" name = "tabs"><label for = "tab4" onclick = "menu('#Money')">결제/주문관리</label></li>
@@ -786,4 +786,4 @@
 		<p>Created by VYVOJ</p>
 	</footer>
 	</body>
-</html>>
+</html>

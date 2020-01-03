@@ -15,10 +15,10 @@
             <h1>
                 <a href="/main/index">LOGO</a>
             </h1>
-            <h2 class="show">
+            <h2>
                 <a href="/main/login">Login</a>
             </h2>
-            <ul>
+            <ul class="show">
                 <li><a href="/main/mypage">회원정보</a></li>
                 <li>
                     <a href="/main/shoppingBasket"><img src="/resources/images/shoppingCart.png" alt="장바구니"/></a>

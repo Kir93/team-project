@@ -21,7 +21,6 @@ var modal = document.querySelector(".modal");
          button.addEventListener("click", toggleModal); 
          cancel.addEventListener("click", toggleModal);
          sub_b.addEventListener("click", toggleModal);
-<<<<<<< HEAD
          window.addEventListener("click", windowOnClick); 
          var acc = document.getElementsByClassName("accordion");
          var i;
@@ -37,6 +36,3 @@ var modal = document.querySelector(".modal");
              } 
            });
          }
-=======
-         window.addEventListener("click", windowOnClick); 
->>>>>>> refs/remotes/origin/Kir93

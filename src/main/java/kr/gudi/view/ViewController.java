@@ -1,4 +1,4 @@
-package kr.gudi.main;
+package kr.gudi.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

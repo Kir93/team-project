@@ -15,7 +15,7 @@
             <h1>
                 <a href="/main/index">LOGO</a>
             </h1>
-            <h2 class="show">
+            <h2>
                 <a href="/main/login">Login</a>
             </h2>
             <ul>
@@ -27,7 +27,7 @@
                     <a href="/main/mypageMain">OOO님</a>
                 </li>
             </ul>
-            <h2><a href="/main/admin">Admin</a></h2>
+            <h2 class="show"><a href="/main/admin">Admin</a></h2>
             <nav>
                 <ul>
                     <li><a href="/main/index">전체상품</a></li>
