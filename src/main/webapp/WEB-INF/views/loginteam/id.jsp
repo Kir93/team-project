@@ -11,24 +11,26 @@
 <link rel="stylesheet" href="/resources/css/join.css">
 </head>
 <body>
-<header>
+</head>
+ <body>
+ <header>
 		<h1>
-			<a href="./index.html">LOGO</a>
+			<a href="./index">LOGO</a>
 		</h1>
-		<h2 class="show">
-			<a href="./loginTeam.html">Login</a>
+		<h2>
+			<a href="./loginTeam">Login</a>
 		</h2>
-		<ul>
-			<li><a href="./mypage.html">회원정보</a></li>
+		<ul class="show">
+			<li><a href="./mypage">회원정보</a></li>
 			<li>
-				<a href="./shoppingBasket.html"><img src="./images/shoppingCart.png" alt="장바구니"></a>
+				<a href="./shoppingBasket"><img src="/resources/images/shoppingCart.png" alt="장바구니"></a>
 			</li>
 			<li>
-				<a href="./mypageMain.html">OOO님</a>
+				<a href="./mypageMain">OOO님</a>
 			</li>
 		</ul>
-		<h2><a href="./admin.html">Admin</a></h2>
-	
+		<h2><a href="./admin">Admin</a></h2>
+		
 	</header>
 <section> 
 		<form action="#" method="post">
