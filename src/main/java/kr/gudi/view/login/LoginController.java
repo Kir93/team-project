@@ -13,21 +13,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/")
-
 public class LoginController {
 	
 		@Autowired private LoginService loginService;
-		
-		@RequestMapping(value = "login", method = RequestMethod.GET)
-		public String login(HttpSession session) {
-			return "login";
-			}
 		
 		@RequestMapping(value = "/loginTeam", method = RequestMethod.POST)
 		public @ResponseBody Map<String, Object> getUser(UserBean ub){
 			System.out.println("Con");
 			System.out.println(ub);
 			return loginService.getUser(ub);
+		}
+		
+		@RequestMapping(value = "/success", method = RequestMethod.GET)
+		public String success(UserBean ub, HttpSession session){
+			session.setAttribute("User", loginService.getUser(ub));
+			return "redirect:/index";
 		}
 
 }
