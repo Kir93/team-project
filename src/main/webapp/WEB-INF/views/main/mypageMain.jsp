@@ -20,7 +20,7 @@
 <!-- // 		} -->
     	
 <!-- <!--     </script> --> 
-</head>
+</head>+9
 <body>
 <header>
 		<h1>
@@ -78,8 +78,6 @@
    </form>
    </div>
    
-   
-   
    <div class = "list1-2">
    <div class = "ova">
 		  <ul class="bg1">
@@ -92,7 +90,9 @@
 			  <li>배송조회</li>
 <!-- 			  <li>수취확인</li> -->
 		  </ul>
-			<ul>
+		  
+		  
+			<ul  class="panel accordion">
 			  <li class = "li1"> <input id = "one" type = "radio" value= "one" name= "date"> </li>
 			  <li>19.01.12</li>
 			  <li>12345</li>
@@ -102,14 +102,23 @@
 			  <li>배송조회</li>
 <!-- 			  <li>수취확인</li> -->
 		  </ul>
+		  
+		  
+		  
 		  	<ul>
-		  	  <li class = "li1"> <input id = "two" type = "radio" value= "two" name= "date"> </li>
-			  <li>19.5.09</li>
-			  <li>12345</li>
-			  <li class = "li2">$$$$$$</li>
-			  <li>50,000원</li>
-			  <li>처리현황</li>
-			  <li>배송조회</li>
+<!-- 		  	  <li class = "li1"> <input id = "two" type = "radio" value= "two" name= "date"> </li> -->
+<!-- 			  <li>19.5.09</li> -->
+<!-- 			  <li>12345</li> -->
+			 <li> 대표제품명</li>
+			 <li class = "li1"> <input id = "three" type = "radio" value= "three" name= "date"> </li>
+			 <li >$$$$$$</li>
+			 <li > <input id = "three" type = "radio" value= "three" name= "date"> </li>
+			 <li >$$$$$$</li>
+			 <li > <input id = "three" type = "radio" value= "three" name= "date"> </li>
+			 <li >$$$$$$</li>
+<!-- 			  <li>50,000원</li> -->
+<!-- 			  <li>처리현황</li> -->
+<!-- 			  <li>배송조회</li> -->
 <!-- 			  <li>수취확인</li> -->
 		  </ul>
 		  	<ul>

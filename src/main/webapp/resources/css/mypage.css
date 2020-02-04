@@ -68,12 +68,19 @@ td.addr input:first-child {
 	width: 10rem;
 }
 
-td.addr button {
+td.addr #button {
 	width: auto;
-	padding: 0.3rem;
+	padding: 0.3rem 0.3rem 0.3rem 0rem;
 	margin: 0;
-	vertical-align: middle;
+	vertical-align: middle;	
+	border: 0;
+	background-color: #ccc;
+	border-radius: 3px;
+	cursor: pointer;
+	font-size: 0.5rem;
 }
+
+td.addr #button:hover { color: white; background-color: #1d69f8;}
 
 td.addr1-1 {
     text-indent: 0.5em;

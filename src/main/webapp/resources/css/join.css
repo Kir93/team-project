@@ -74,13 +74,24 @@ section button:hover {
 	float: left;
 }
 
-.addr button {
+.addr #button {
+	color: #ffffff;
+	background-color: #ccc;
 	float: left;
     width: auto;
     padding: 0.4rem;
     margin: 0.1rem 0.2rem 0.2rem 0.2rem;
     vertical-align: middle;
-    font-size: 0.5rem;
+    font-size: 0.5rem;	
+	border-radius: 3px;
+	cursor: pointer;	
+	color: black; 
+	border: 0;   
+}
+
+.addr #button:hover {
+	color: white;
+	background-color: #1d69f8;
 }
 .addr1 {width: 100%; 
 		box-sizing: border-box;
