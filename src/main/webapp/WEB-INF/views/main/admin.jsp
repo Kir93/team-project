@@ -9,9 +9,11 @@
 		<link rel = "stylesheet" href = "/resources/css/admin.css">
 		<title>상품관리 / 관리자 전용</title>
 		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet">
+		<script src="/lib/jquery/3.4.1/dist/jquery.min.js"></script>
 		<script type="text/javascript" src="/resources/js/admin.js"></script>
+		<script src="/resources/js/product.js"></script>
 	</head>
-	<body  onload="Accordion()">
+	<body onload="Accordion()">
 	 	<header>
 			<nav id = "nav_tab">
 				<ul>
@@ -136,43 +138,42 @@
 					<h1 class = "title2">상품등록</h1>
 					<hr>
 					<div class = "inputarea">
-						<form autocomplete="off">
+						<form id="setProduct">
 							<ul>
 								<li>
-									<label class = "li_tatle" for = "item_name">상품명</label>
-									<input class = "input_name" type = "text" id = "item_name" placeholder="EX : 나만알고싶은 세미오버 싱글코트" >
+									<label class = "li_tatle" for = "sname">상품명</label>
+									<input class = "input_name" type = "text" id = "sname" name="sname" placeholder="EX : 나만알고싶은 세미오버 싱글코트" >
 								</li>	
 							</ul>	
 							<ul>
 								<li>
 									<label class = "li_tatle" for = "price">판매가</label>
-									<input class = "input_price" type = "text" id = "price"
-									 placeholder="EX : 48,500">	 
+									<input class = "input_price" type = "text" id = "price" name="price" placeholder="EX : 48,500">	 
 								</li>
 							</ul>
 							<ul>	
 								<li>
-									<label class = "li_tatle" for = "thumbnail_id">썸네일이미지등록</label>
-									<input type ="file" name = "thumbnail" id = "thumbnail_id">
+									<label class = "li_tatle" for = "thumbnailImg">썸네일이미지등록</label>
+									<input type ="file" name = "thumbnailImg" id = "thumbnailImg">
 								</li>
 							</ul>
 							<ul>	
 								<li>
-									<label class = "li_tatle" for = "explain1">상품컬러</label>
+									<label class = "li_tatle" for = "color">상품컬러</label>
 									<div class = "input_check">
-										<input class = "" type = "checkbox"><span>Black</span>
-										<input class = "" type = "checkbox"><span>White</span>
-										<input class = "" type = "checkbox"><span>Gray</span>
-										<input class = "" type = "checkbox"><span>Blue</span>
-										<input class = "" type = "checkbox"><span>Red</span>
+										<input class = "colorSelect" name="color[]" type = "checkbox" value="B"><span>Black</span>
+										<input class = "colorSelect" name="color[]" type = "checkbox" value="W"><span>White</span>
+										<input class = "colorSelect" name="color[]" type = "checkbox" value="G"><span>Gray</span>
+										<input class = "colorSelect" name="color[]" type = "checkbox" value="Be"><span>Blue</span>
+										<input class = "colorSelect" name="color[]" type = "checkbox" value="R"><span>Red</span>
 									</div>
 								</li>
 								
 							</ul>
 							<ul>						
 								<li>
-									<label class = "li_tatle" for = "explain2">상품상세설명</label>
-									<input class = "" type ="file" name = "profile" id = "explain2">
+									<label class = "li_tatle" for = "detailImg">상품상세설명</label>
+									<input class = "" type ="file" name = "detailImg" id = "detailImg">
 	 <!-- 					        <textarea class = "li_input inputexplain2" name = "txt"></textarea>  텍스트 --> 	
 								</li>
 							</ul>
