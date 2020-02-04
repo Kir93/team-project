@@ -11,7 +11,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet">
 		<script type="text/javascript" src="/resources/js/admin.js"></script>
 	</head>
-	<body  onload="Accordion()">  
+	<body  onload="Accordion()">
 	 	<header>
 			<nav id = "nav_tab">
 				<ul>
@@ -46,12 +46,6 @@
 						</li>
 						<li>
 							<a class = "a_line">
-								<strong>판매안함</strong>
-								<span>15건</span>
-							</a>
-						</li>
-						<li>
-							<a class = "a_line">
 								<strong>품절</strong>
 								<span>2건</span>
 							</a>
@@ -61,8 +55,7 @@
 					<h3 class = "subtitle">상품목록</h3>
 					<div class = "btnset">
 						<button id="open" type="button" onclick = "openModal('.M1')">상품등록</button>
-						<button type="button" onclick = "openModal(M1)">수정</button>
-						<button type="button">삭제</button>
+						<button type="button" onclick = "openModal('.M3')">수정</button>
 					</div>
 					<div class = "item_inventory2">
 					<form>
@@ -166,9 +159,15 @@
 							<ul>	
 								<li>
 									<label class = "li_tatle" for = "explain1">상품컬러</label>
-									<input class = "input_explain1" type = "text" id = "explain1" 
-									placeholder="EX :아이보리,레드,블랙 ">
+									<div class = "input_check">
+										<input class = "" type = "checkbox"><span>Black</span>
+										<input class = "" type = "checkbox"><span>White</span>
+										<input class = "" type = "checkbox"><span>Gray</span>
+										<input class = "" type = "checkbox"><span>Blue</span>
+										<input class = "" type = "checkbox"><span>Red</span>
+									</div>
 								</li>
+								
 							</ul>
 							<ul>						
 								<li>
@@ -179,6 +178,67 @@
 							</ul>
 							<div  class="btnregister">	
 								<input type="submit" value="등록" class = "submit">
+							</div>	
+						</form>
+						</div>
+					</div>	
+				</div>
+				<div class="modal hidden M3">
+				<div class = "modal__overlay"></div>
+				<div class="modal__content">
+				<span class="close" onclick="closeModal()">&times;</span> 
+					<h1 class = "title2">상품수정</h1>
+					<hr>
+					<div class = "inputarea">
+						<form autocomplete="off">
+							<ul>
+								<li>
+									<label class = "li_tatle" for = "item_name">상품명</label>
+									<input class = "input_name" type = "text" id = "item_name" placeholder="EX : 나만알고싶은 세미오버 싱글코트" >
+								</li>	
+							</ul>	
+							<ul>
+								<li>
+									<label class = "li_tatle" for = "price">판매가</label>
+									<input class = "input_price" type = "text" id = "price"
+									 placeholder="EX : 48,500">	 
+								</li>
+							</ul>
+							<ul>	
+								<li>
+									<label class = "li_tatle" for = "thumbnail_id">썸네일이미지등록</label>
+									<input type ="file" name = "thumbnail" id = "thumbnail_id">
+								</li>
+							</ul>
+							<ul>	
+								<li>
+									<label class = "li_tatle" for = "explain1">상품컬러</label>
+									<div class = "input_check">
+										<input class = "" type = "checkbox"><span>Black</span>
+										<input class = "" type = "checkbox"><span>White</span>
+										<input class = "" type = "checkbox"><span>Gray</span>
+										<input class = "" type = "checkbox"><span>Blue</span>
+										<input class = "" type = "checkbox"><span>Red</span>
+									</div>
+								</li>
+							</ul>
+							<ul>						
+								<li>
+									<label class = "li_tatle" for = "explain2">상품상세설명</label>
+									<input class = "" type ="file" name = "profile" id = "explain2">
+	 <!-- 					        <textarea class = "li_input inputexplain2" name = "txt"></textarea>  텍스트 --> 	
+								</li>
+							</ul>
+							<ul>	
+								<li>
+									<label class = "li_tatle" for = "explain1">상품상태</label>
+									<div class = "input_check">
+										<input class = "" type = "checkbox"><span>품절</span>
+									</div>
+								</li>
+							</ul>
+							<div  class="btnregister">	
+								<input type="submit" value="수정" class = "submit">
 							</div>	
 						</form>
 						</div>
@@ -227,7 +287,7 @@
 						<li>
 							<a>
 								<span>0</span>
-								<h4>어제가입회원</h4>
+								<h4>이달가입회원</h4>
 							</a>
 						</li>
 						<li>
@@ -239,7 +299,7 @@
 						<li>
 							<a>
 								<span>0</span>
-								<h4>어제방문자</h4>
+								<h4>이달방문자</h4>
 							</a>
 						</li>
 					</ul>
@@ -259,7 +319,7 @@
 						<li>
 							<a>
 								<span>0</span>
-								<h4>어제매출</h4>
+								<h4>전월매출</h4>
 							</a>
 						</li>
 					</ul>
@@ -395,13 +455,6 @@
 								<strong>미처리</strong>
 								<span>2건</span>
 							</a>
-						</li>
-						<li>
-							<a class = "a_line">
-								<strong>처리중</strong>
-								<span>8건</span>
-							</a>
-						</li>
 						<li>
 							<a class = "a_line">
 								<strong>문의완료</strong>
@@ -413,7 +466,6 @@
 					<h3 class = "subtitle">문의목록</h3>
 					<div class = "btnset">
 						<button type="button">처리완료정렬</button>
-						<button type="button">처리중정렬</button>
 						<button type="button">미처리정렬</button>
 						<button type="button">처리완료</button>
 					</div>	
@@ -527,8 +579,8 @@
 					<h3 class = "subtitle">회원목록</h3>
 					<div class = "search">
 						<form>
-							<button type="button" class = "search_array">이름순정렬</button>
-							<button type="button" class = "search_array">나이순정렬</button>
+							<button type="button" class = "search_array">관리자정렬</button>
+							<button type="button" class = "search_array">회원정렬</button>
 							<input type="text" placeholder="회원명을 입력하세요." class= "searchbar"/>
 							<button type="button" class = "search_btn">검색</button>
 						</form>
@@ -540,6 +592,7 @@
 							<li><label class = "item_name_li2">no</label></li>
 							<li><label class = "item_name_li1">성별</label></li>
 							<li><label class = "item_name_li1">이름</label></li>
+							<li><label class = "item_name_li4">구분</label></li>
 							<li><label class = "item_name_li3">회원정보</label></li>
 							<li><label class = "item_name_li1">가입일자</label></li>
 						</ul>
@@ -552,6 +605,12 @@
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">성별</label></li>
 							<li><label class = "item_inventory_li1">이름</label></li>
+							<li><label class = "item_inventory_li4">
+							<select name="division">
+							  <option value="회원" selected="selected">회원</option>
+							  <option value="관리자">관리자</option>
+							</select>
+							</label></li>
 							<li><label class = "item_inventory_li3">회원정보</label></li>
 							<li><label class = "item_inventory_li1">가입일자</label></li>
 						</ul>
@@ -560,6 +619,7 @@
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">성별</label></li>
 							<li><label class = "item_inventory_li1">이름</label></li>
+							<li><label class = "item_inventory_li4">회원</label></li>
 							<li><label class = "item_inventory_li3">회원정보</label></li>
 							<li><label class = "item_inventory_li1">가입일자</label></li>
 						</ul>
@@ -568,6 +628,7 @@
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">성별</label></li>
 							<li><label class = "item_inventory_li1">이름</label></li>
+							<li><label class = "item_inventory_li4">회원</label></li>
 							<li><label class = "item_inventory_li3">회원정보</label></li>
 							<li><label class = "item_inventory_li1">가입일자</label></li>
 						</ul>
@@ -576,6 +637,7 @@
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">성별</label></li>
 							<li><label class = "item_inventory_li1">이름</label></li>
+							<li><label class = "item_inventory_li4">회원</label></li>
 							<li><label class = "item_inventory_li3">회원정보</label></li>
 							<li><label class = "item_inventory_li1">가입일자</label></li>
 						</ul>
@@ -584,6 +646,7 @@
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">성별</label></li>
 							<li><label class = "item_inventory_li1">이름</label></li>
+							<li><label class = "item_inventory_li4">회원</label></li>
 							<li><label class = "item_inventory_li3">회원정보</label></li>
 							<li><label class = "item_inventory_li1">가입일자</label></li>
 						</ul>
@@ -592,6 +655,7 @@
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">성별</label></li>
 							<li><label class = "item_inventory_li1">이름</label></li>
+							<li><label class = "item_inventory_li4">회원</label></li>
 							<li><label class = "item_inventory_li3">회원정보</label></li>
 							<li><label class = "item_inventory_li1">가입일자</label></li>
 						</ul>
@@ -600,6 +664,7 @@
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">성별</label></li>
 							<li><label class = "item_inventory_li1">이름</label></li>
+							<li><label class = "item_inventory_li4">회원</label></li>
 							<li><label class = "item_inventory_li3">회원정보</label></li>
 							<li><label class = "item_inventory_li1">가입일자</label></li>
 						</ul>
@@ -608,6 +673,7 @@
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">성별</label></li>
 							<li><label class = "item_inventory_li1">이름</label></li>
+							<li><label class = "item_inventory_li4">회원</label></li>
 							<li><label class = "item_inventory_li3">회원정보</label></li>
 							<li><label class = "item_inventory_li1">가입일자</label></li>
 						</ul>
