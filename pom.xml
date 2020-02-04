@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>kr.gudi</groupId>
 	<artifactId>web</artifactId>
-	<name>WebLegacy</name>
+	<name>TeamProject</name>
 	<packaging>war</packaging>
 	<version>1</version>
 	<properties>
