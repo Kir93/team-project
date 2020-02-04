@@ -11,7 +11,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet">
 		<script type="text/javascript" src="/resources/js/admin.js"></script>
 	</head>
-	<body  onload="Accordion()">
+	<body  onload="Accordion()">  
 	 	<header>
 			<nav id = "nav_tab">
 				<ul>
