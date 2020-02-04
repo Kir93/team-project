@@ -16,6 +16,15 @@
 					    <li><a href="/main/shoppingBasket"><img src="/resources/images/shoppingCart.png" alt="장바구니"/></a></li>
 					    <li><a href="/main/mypageMain">OOO님</a></li>
 					</ul>
+					<nav>
+					    <ul>
+					        <li><a href="/main/index">전체상품</a></li>
+					        <li><a href="/main/newItem">신상품</a></li>
+					        <li><a href="/main/bestItem">Best Item</a></li>
+					        <li><a href="/main/choseItem">찜한상품</a></li>
+					        <li><a href="/main/faq">FAQ</a></li>
+					    </ul>
+					</nav>
 				</c:when>
 				<c:otherwise>
 					<h2><a href="/main/admin">Admin</a></h2>
@@ -23,17 +32,16 @@
 			</c:when>
 			<c:otherwise>
 				<h2 class="show"><a href="/main/loginTeam">Login</a></h2>
+				<nav>
+				    <ul>
+				        <li><a href="/main/index">전체상품</a></li>
+				        <li><a href="/main/newItem">신상품</a></li>
+				        <li><a href="/main/bestItem">Best Item</a></li>
+				        <li><a href="/main/faq">FAQ</a></li>
+				    </ul>
+				</nav>
 			</c:otherwise>
 		</c:choose>
-		<nav>
-		    <ul>
-		        <li><a href="/main/index">전체상품</a></li>
-		        <li><a href="/main/newItem">신상품</a></li>
-		        <li><a href="/main/bestItem">Best Item</a></li>
-		        <li><a href="/main/choseItem">찜한상품</a></li>
-		        <li><a href="/main/faq">FAQ</a></li>
-		    </ul>
-		</nav>
 	</header>
 </body>
 </html>
