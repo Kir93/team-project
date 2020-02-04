@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="/resources/css/reset.css">
 		<link rel="stylesheet" href="/resources/css/commonlayout.css">
 		<link rel="stylesheet" href="/resources/css/mypage.css">
+		<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <!-- <!-- 		<script> --> 
 <!-- //     	function ck(){ -->
 <!-- //     		var regExp = /^\d{3}\d{3,4}\d{4}$/; -->
@@ -108,15 +109,32 @@
 <!--         <option VALUE=female >여성</option> -->
 <!--     </SELECT></td> -->
 <!--     </tr> -->
-      <tr>
-        <th scope="row">주소</th>
-        <td class = "addr"><input type="text" name="">
-                          <button> 우편번호 </button> 
-                          <input class="addr1-1" type="text" name="addr1" 
-                          value= "서울특별시 금천구 가산동 가산디지털2로" placeholder="주소를 입력하세요." >
-                          <input class="addr1-1" type="text" name="addr2" 
-                          value= "3층 308호" placeholder="주소를 입력하세요."></td>  
-       </tr>
+<!--       <tr> -->
+<!--         <th scope="row">주소</th> -->
+<!--         <td class = "addr"><input type="text" name=""> -->
+<!--                           <button> 우편번호 </button>  -->
+<!--                           <input class="addr1-1" type="text" name="addr1"  -->
+<!--                           value= "서울특별시 금천구 가산동 가산디지털2로" placeholder="주소를 입력하세요." > -->
+<!--                           <input class="addr1-1" type="text" name="addr2"  -->
+<!--                           value= "3층 308호" placeholder="주소를 입력하세요."></td>   -->
+<!--        </tr> -->
+       
+       <tr>
+       <th scope="row">주소</th>
+       		<td class = "addr"> <input type="text" id="sample4_postcode" placeholder="우편번호">
+			<input id = button type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+			<input class="addr1-1" name="addr1"type="text" id="sample4_roadAddress" placeholder="도로명주소">
+<!-- 			<input type="text" id="sample4_jibunAddress" placeholder="지번주소"> -->
+			<span id="guide" style="color:#999;display:none"></span>
+			<input class="addr1-1" name="addr2" type="text" id="sample4_detailAddress" placeholder="상세주소"></td>
+<!-- 			<input type="text" id="sample4_extraAddress" placeholder="참고항목"></td> -->
+   </tr>       
+       
+       
+       
+       
+       
+       
  	 <tr>
         <th scope="row">연락처</th>
         <td><input id = "number" type="tel" name="mb_number"

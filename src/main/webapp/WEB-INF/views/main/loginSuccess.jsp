@@ -48,6 +48,6 @@
 		<p>Created by VYVOJ</p>
 		<h4>본 사이트에서 사용된 모든 이미지는 <a href="https://store.musinsa.com/">MUSINSA Store</a>에 저작권이 있습니다.</h4>
 	</footer>
-	<script src="./js/payment.js"></script>
+	
 
 </body></html>

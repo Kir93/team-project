@@ -180,7 +180,7 @@ section button:hover{
     	  width: 15rem;
     	  font-size: 0.6rem;
 }
-		 
+
 
 @media  (max-width: 700px){
 	section .list1-2 li {width: calc(100% / 8); border: 0; padding: 0.3rem 0; font-size: 0.6rem;}
