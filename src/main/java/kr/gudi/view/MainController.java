@@ -10,4 +10,14 @@ public class MainController {
 	public String main() {
 		return "redirect:main/index";
 	}
+	
+	@RequestMapping("/header")
+	public String header() {
+		return "main/header";
+	}
+	
+	@RequestMapping("/footer")
+	public String footer() {
+		return "main/footer";
+	}
 }
