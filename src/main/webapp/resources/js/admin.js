@@ -2,6 +2,7 @@
  * adminPage JS
  */
 
+
 /*Modal 변수선언*/
 var openButton;
 var modal;
@@ -47,3 +48,29 @@ function Accordion(){
 	  });
 	}
 }
+$(document).ready(function(){
+	/* 결제정보등록*/
+	
+	$("#bankbook").submit(function(e){
+		e.preventDefault();
+		$.ajax({
+			
+		}).done(function(){
+			
+		});
+		closeModal();
+	
+	
+});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+});
+

@@ -7,8 +7,10 @@
 <!-- 		<meta name="viewport" content="width=640, heigth=device-heigth,"> -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel = "stylesheet" href = "/resources/css/admin.css">
+		<link rel="shortcut icon" type="image/x-icon" href="/resources/images/admin/adminFavicon.png">
 		<title>상품관리 / 관리자 전용</title>
 		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet">
+		<script src="/lib/jquery/3.4.1/dist/jquery.min.js"></script>
 		<script type="text/javascript" src="/resources/js/admin.js"></script>
 	</head>
 	<body  onload="Accordion()">
@@ -715,7 +717,7 @@
 					<h3 class = "subtitle">주문목록</h3>
 					<div class = "search">
 						<form>
-							<button id = "open2" type="button" class = "search_array" onclick="openModal('.M2')">결제정보 수정</button>
+							<button id = "open2" type="button" class = "search_array" onclick="openModal('.M2')">결제정보 등록</button>
 							<button type="button" class = "search_array">무통장 정렬</button>
 							<input type="text" placeholder="회원명 또는 주문번호를 입력하세요." class= "searchbar"/>
 							<button type="button" class = "search_btn">검색</button>
@@ -826,7 +828,7 @@
 			<h1 class = "title2">결제관리</h1>
 			<hr>
 			<div class = "inputarea">
-				<form autocomplete="off">
+				<form autocomplete="off" id = "bankbook">
 					<ul>
 						<li>
 							<label class = "li_tatle" for = "item_name">무통장 예금주명</label>
