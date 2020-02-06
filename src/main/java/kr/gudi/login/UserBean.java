@@ -1,4 +1,4 @@
-package kr.gudi.view.login;
+package kr.gudi.login;
 
 public class UserBean {
 	

@@ -18,7 +18,7 @@ $(document).ready(function(){
 	    	 console.log(d);
 	         if(d) {
 	            alert("login1성공");
-	            location.href = "/success";
+	            location.href = "/main/index";
 	         } else {
 	            alert("login1실패");
 	            location.href = "/main/loginTeam";

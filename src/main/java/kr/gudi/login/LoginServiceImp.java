@@ -1,4 +1,4 @@
-package kr.gudi.view.login;
+package kr.gudi.login;
 
 import java.util.Map;
 

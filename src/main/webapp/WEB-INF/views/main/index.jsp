@@ -15,7 +15,9 @@
         <section>
             <div id="itemArea">
                 <div class="item">
+                	<c:if test="${user}">
                     <span class="js-chose" onclick="choseItem(event, this)">♥</span>
+                    </c:if>
                     <a href="/main/item"><img src="/resources/images/img1.jpg" alt="sample1"/></a>
                     <div class="itemArea">
                         <p class="itemName"><a href="/main/item">Sample Item</a></p>
@@ -23,7 +25,9 @@
                     </div>
                 </div>
                 <div class="item">
+                    <c:if test="${user}">
                     <span class="js-chose" onclick="choseItem(event, this)">♥</span>
+                    </c:if>
                     <a href="/main/item"><img src="/resources/images/img2.jpg" alt="sample1"/></a>
                     <div class="itemArea">
                         <p class="itemName"><a href="/main/item">Sample Item</a></p>
@@ -31,7 +35,9 @@
                     </div>
                 </div>
                 <div class="item">
-                    <span class="js-chose" onclick="choseItem(event, this)">♡</span>
+                    <c:if test="${user}">
+                    <span class="js-chose" onclick="choseItem(event, this)">♥</span>
+                    </c:if>
                     <a href="/main/item"><img src="/resources/images/img3.jpg" alt="sample1"/></a>
                     <div class="itemArea">
                         <p class="itemName"><a href="/main/item">Sample Item</a></p>
@@ -39,7 +45,9 @@
                     </div>
                 </div>
                 <div class="item">
-                    <span class="js-chose" onclick="choseItem(event, this)">♡</span>
+                    <c:if test="${user}">
+                    <span class="js-chose" onclick="choseItem(event, this)">♥</span>
+                    </c:if>
                     <a href="/main/item"><img src="/resources/images/img1.jpg" alt="sample1"/></a>
                     <div class="itemArea">
                         <p class="itemName"><a href="/main/item">Sample Item</a></p>
@@ -47,7 +55,9 @@
                     </div>
                 </div>
                 <div class="item">
-                    <span class="js-chose" onclick="choseItem(event, this)">♡</span>
+                    <c:if test="${user}">
+                    <span class="js-chose" onclick="choseItem(event, this)">♥</span>
+                    </c:if>
                     <a href="/main/item"><img src="/resources/images/img2.jpg" alt="sample1"/></a>
                     <div class="itemArea">
                         <p class="itemName"><a href="/main/item">Sample Item</a></p>
@@ -55,7 +65,9 @@
                     </div>
                 </div>
                 <div class="item">
-                    <span class="js-chose" onclick="choseItem(event, this)">♡</span>
+                    <c:if test="${user}">
+                    <span class="js-chose" onclick="choseItem(event, this)">♥</span>
+                    </c:if>
                     <a href="/main/item"><img src="/resources/images/img3.jpg" alt="sample1"/></a>
                     <div class="itemArea">
                         <p class="itemName"><a href="/main/item">Sample Item</a></p>
@@ -63,7 +75,9 @@
                     </div>
                 </div>
                 <div class="item">
-                    <span class="js-chose" onclick="choseItem(event, this)">♡</span>
+                    <c:if test="${user}">
+                    <span class="js-chose" onclick="choseItem(event, this)">♥</span>
+                    </c:if>
                     <a href="/main/item"><img src="/resources/images/img1.jpg" alt="sample1"/></a>
                     <div class="itemArea">
                         <p class="itemName"><a href="/main/item">Sample Item</a></p>
@@ -71,7 +85,9 @@
                     </div>
                 </div>
                 <div class="item">
-                    <span class="js-chose" onclick="choseItem(event, this)">♡</span>
+                    <c:if test="${user}">
+                    <span class="js-chose" onclick="choseItem(event, this)">♥</span>
+                    </c:if>
                     <a href="/main/item"><img src="/resources/images/img2.jpg" alt="sample1"/></a>
                     <div class="itemArea">
                         <p class="itemName"><a href="/main/item">Sample Item</a></p>
@@ -79,7 +95,9 @@
                     </div>
                 </div>
                 <div class="item">
-                    <span class="js-chose" onclick="choseItem(event, this)">♡</span>
+                    <c:if test="${user}">
+                    <span class="js-chose" onclick="choseItem(event, this)">♥</span>
+                    </c:if>
                     <a href="/main/item"><img src="/resources/images/img3.jpg" alt="sample1"/></a>
                     <div class="itemArea">
                         <p class="itemName"><a href="/main/item">Sample Item</a></p>
@@ -87,7 +105,9 @@
                     </div>
                 </div>
                 <div class="item">
-                    <span class="js-chose" onclick="choseItem(event, this)">♡</span>
+                    <c:if test="${user}">
+                    <span class="js-chose" onclick="choseItem(event, this)">♥</span>
+                    </c:if>
                     <a href="/main/item"><img src="/resources/images/img1.jpg" alt="sample1"/></a>
                     <div class="itemArea">
                         <p class="itemName"><a href="/main/item">Sample Item</a></p>
