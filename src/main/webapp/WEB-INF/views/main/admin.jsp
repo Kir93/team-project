@@ -141,8 +141,8 @@
 						<form autocomplete="off">
 							<ul>
 								<li>
-									<label class = "li_tatle" for = "item_name">상품명</label>
-									<input class = "input_name" type = "text" id = "item_name" placeholder="EX : 나만알고싶은 세미오버 싱글코트" >
+									<label class = "li_tatle" for = "item_name1">상품명</label>
+									<input class = "input_name" type = "text" id = "item_name1" placeholder="EX : 나만알고싶은 세미오버 싱글코트" >
 								</li>	
 							</ul>	
 							<ul>
@@ -831,13 +831,13 @@
 				<form autocomplete="off" id = "bankbook">
 					<ul>
 						<li>
-							<label class = "li_tatle" for = "item_name">무통장 예금주명</label>
-							<input class = "input_name" type = "text" id = "item_name" placeholder="EX : 한충렬" >
+							<label class = "li_tatle" for = "depositor">무통장 예금주명</label>
+							<input class = "input_name" type = "text" id = "depositor" placeholder="EX : 한충렬" >
 						</li>	
 					</ul>	
 					<ul>
 						<li>
-							<label class = "li_tatle" for = "price">입금은행</label>
+							<label class = "li_tatle" for = "bank">입금은행</label>
 							<input class = "input_price" type = "text" id = "bank"
 							 placeholder="EX : 국민은행 : 0000000-00-000000">	 
 						</li>

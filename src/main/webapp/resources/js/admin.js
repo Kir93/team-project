@@ -53,12 +53,17 @@ $(document).ready(function(){
 	
 	$("#bankbook").submit(function(e){
 		e.preventDefault();
+		var params = {
+				depositor : $("#depositor").val(),
+				bank	  : $("#bank").val()
+		};
 		$.ajax({
 			
-		}).done(function(){
-			
+		}).done(function(d){
+			console.log("성공 : "+ d);
+			closeModal();
 		});
-		closeModal();
+		
 	
 	
 });
