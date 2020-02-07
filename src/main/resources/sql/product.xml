@@ -3,7 +3,29 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="product">
+	
+	<select id="productStatus" resultType="Map">
+		SELECT COUNT(soldOut) AS 'tot',
+			SUM(case when soldOut = 'N' then 1 ELSE 0 END) AS 'sale',
+		 	SUM(case when soldOut = 'Y' then 1 ELSE 0 END) AS 'soldout'
+		FROM product;
+	</select>
+	<select id="productList" resultType="Map">
+		SELECT * FROM product;
+	</select>
+	<select id="findProduct" resultType="Map">
+		SELECT * FROM product WHERE no = #{no};
+	</select>
 	<insert id="setProduct" parameterType="Map">
 		INSERT INTO product (sname, price, color) VALUE (#{sname}, #{price}, #{color})
 	</insert>
+	<select id="getImgNo" resultType="Integer">
+		SELECT `no` FROM product ORDER BY `no` DESC LIMIT 1;
+	</select>
+	<update id="setImage" parameterType="Map">
+  		UPDATE product SET
+  		`thumbnailImg` = #{tPath},
+  		`detailImg` = #{dPath}
+  		WHERE no = #{no} 
+  </update>
 </mapper>

@@ -32,105 +32,24 @@
 					<h1 class = "title">상품관리</h1>
 					<hr>
 					<h3 class = "subtitle">상품현황</h3>
-				<div class = "itemstatus">
-					<ul>
-						<li>
-							<a>
-								<strong>전체</strong>
-								<span>80건</span>
-							</a>
-						</li>
-						<li>
-							<a>
-								<strong>판매중</strong>
-								<span>65건</span>
-							</a>
-						</li>
-						<li>
-							<a class = "a_line">
-								<strong>품절</strong>
-								<span>2건</span>
-							</a>
-						</li>
-					</ul>
-				</div>
+				<div id="productStatus" class = "itemstatus"></div>
 					<h3 class = "subtitle">상품목록</h3>
 					<div class = "btnset">
-						<button id="open" type="button" onclick = "openModal('.M1')">상품등록</button>
-						<button type="button" onclick = "openModal('.M3')">수정</button>
+						<button id="open" type="button" onclick = "setProduct()">상품등록</button>
+						<button type="button" onclick = "repairProduct()">수정</button>
 					</div>
 					<div class = "item_inventory2">
 					<form>
 						<ul>
-							<li class = "li_tatle item_name_li2"><input type = "checkbox" id = "checkboxAll"></li>
-							<li><label class = "item_name_li2">no</label></li>
+							<li class = "li_tatle item_name_li2">선택</li>
+							<li><label class = "item_name_li1">no</label></li>
 							<li><label class = "item_name_li1">상품구분</label></li>
-							<li><label class = "item_name_li1">상품코드</label></li>
 							<li><label class = "item_name_li3">상품명</label></li>
 							<li><label class = "item_name_li1">판매가</label></li>
 						</ul>
 					</form>	
 					</div>	
-				<div class = "item_inventory">	
-					<form>	
-						<ul>
-							<li class = "li_tatle item_inventory_li2"><input type = "checkbox"></li>
-							<li><label class = "item_inventory_li2">no</label></li>
-							<li><label class = "item_inventory_li1">상품구분</label></li>
-							<li><label class = "item_inventory_li1">상품코드</label></li>
-							<li><label class = "item_inventory_li3">상품명</label></li>
-							<li><label class = "item_inventory_li1">판매가</label></li>
-						</ul>
-						<ul>
-							<li class = "li_tatle item_inventory_li2"><input type = "checkbox"></li>
-							<li><label class = "item_inventory_li2">no</label></li>
-							<li><label class = "item_inventory_li1">상품구분</label></li>
-							<li><label class = "item_inventory_li1">상품코드</label></li>
-							<li><label class = "item_inventory_li3">상품명</label></li>
-							<li><label class = "item_inventory_li1">판매가</label></li>
-						</ul>
-						<ul>
-							<li class = "li_tatle item_inventory_li2"><input type = "checkbox"></li>
-							<li><label class = "item_inventory_li2">no</label></li>
-							<li><label class = "item_inventory_li1">상품구분</label></li>
-							<li><label class = "item_inventory_li1">상품코드</label></li>
-							<li><label class = "item_inventory_li3">상품명</label></li>
-							<li><label class = "item_inventory_li1">판매가</label></li>
-						</ul>
-						<ul>
-							<li class = "li_tatle item_inventory_li2"><input type = "checkbox"></li>
-							<li><label class = "item_inventory_li2">no</label></li>
-							<li><label class = "item_inventory_li1">상품구분</label></li>
-							<li><label class = "item_inventory_li1">상품코드</label></li>
-							<li><label class = "item_inventory_li3">상품명</label></li>
-							<li><label class = "item_inventory_li1">판매가</label></li>
-						</ul>
-						<ul>
-							<li class = "li_tatle item_inventory_li2"><input type = "checkbox"></li>
-							<li><label class = "item_inventory_li2">no</label></li>
-							<li><label class = "item_inventory_li1">상품구분</label></li>
-							<li><label class = "item_inventory_li1">상품코드</label></li>
-							<li><label class = "item_inventory_li3">상품명</label></li>
-							<li><label class = "item_inventory_li1">판매가</label></li>
-						</ul>
-						<ul>
-							<li class = "li_tatle item_inventory_li2"><input type = "checkbox"></li>
-							<li><label class = "item_inventory_li2">no</label></li>
-							<li><label class = "item_inventory_li1">상품구분</label></li>
-							<li><label class = "item_inventory_li1">상품코드</label></li>
-							<li><label class = "item_inventory_li3">상품명</label></li>
-							<li><label class = "item_inventory_li1">판매가</label></li>
-						</ul>
-						<ul>
-							<li class = "li_tatle item_inventory_li2"><input type = "checkbox"></li>
-							<li><label class = "item_inventory_li2">no</label></li>
-							<li><label class = "item_inventory_li1">상품구분</label></li>
-							<li><label class = "item_inventory_li1">상품코드</label></li>
-							<li><label class = "item_inventory_li3">상품명</label></li>
-							<li><label class = "item_inventory_li1">판매가</label></li>
-						</ul>
-					</form>
-				</div>
+				<div id="productList" class = "item_inventory"></div>
 			<div class="modal hidden M1">
 				<div class = "modal__overlay"></div>
 				<div class="modal__content">
@@ -191,42 +110,43 @@
 					<h1 class = "title2">상품수정</h1>
 					<hr>
 					<div class = "inputarea">
-						<form autocomplete="off">
+						<form id="updateProduct">
 							<ul>
 								<li>
+									<input type="text" id="upno" class="hidden">
 									<label class = "li_tatle" for = "item_name">상품명</label>
-									<input class = "input_name" type = "text" id = "item_name" placeholder="EX : 나만알고싶은 세미오버 싱글코트" >
+									<input class = "input_name" type = "text" id = "rname" >
 								</li>	
 							</ul>	
 							<ul>
 								<li>
 									<label class = "li_tatle" for = "price">판매가</label>
-									<input class = "input_price" type = "text" id = "price"
+									<input class = "input_price" type = "text" id = "rprice"
 									 placeholder="EX : 48,500">	 
 								</li>
 							</ul>
 							<ul>	
 								<li>
 									<label class = "li_tatle" for = "thumbnail_id">썸네일이미지등록</label>
-									<input type ="file" name = "thumbnail" id = "thumbnail_id">
+									<input type ="file" name = "thumbnail" id = "rThumbnailImg">
 								</li>
 							</ul>
 							<ul>	
 								<li>
 									<label class = "li_tatle" for = "explain1">상품컬러</label>
 									<div class = "input_check">
-										<input class = "" type = "checkbox"><span>Black</span>
-										<input class = "" type = "checkbox"><span>White</span>
-										<input class = "" type = "checkbox"><span>Gray</span>
-										<input class = "" type = "checkbox"><span>Blue</span>
-										<input class = "" type = "checkbox"><span>Red</span>
+										<input class = "RcolorSelect" name="color[]" type = "checkbox" value="B"><span>Black</span>
+										<input class = "RcolorSelect" name="color[]" type = "checkbox" value="W"><span>White</span>
+										<input class = "RcolorSelect" name="color[]" type = "checkbox" value="G"><span>Gray</span>
+										<input class = "RcolorSelect" name="color[]" type = "checkbox" value="Be"><span>Blue</span>
+										<input class = "RcolorSelect" name="color[]" type = "checkbox" value="R"><span>Red</span>
 									</div>
 								</li>
 							</ul>
 							<ul>						
 								<li>
 									<label class = "li_tatle" for = "explain2">상품상세설명</label>
-									<input class = "" type ="file" name = "profile" id = "explain2">
+									<input class = "" type ="file" name = "profile" id = "rDetailImg">
 	 <!-- 					        <textarea class = "li_input inputexplain2" name = "txt"></textarea>  텍스트 --> 	
 								</li>
 							</ul>
@@ -234,7 +154,7 @@
 								<li>
 									<label class = "li_tatle" for = "explain1">상품상태</label>
 									<div class = "input_check">
-										<input class = "" type = "checkbox"><span>품절</span>
+										<input class = "soldOut" type = "checkbox" value="Y"><span>품절</span>
 									</div>
 								</li>
 							</ul>

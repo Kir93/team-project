@@ -1,7 +1,7 @@
 @charset "UTF-8"; 
 html{height: 100%;}
 body{height: 100%;}
-body, p, h1, h2, h3, ul, li, a, textarea{margin: 0; padding: 0; font-family: 'Nanum Gothic', sans-serif; text-decoration: none;}
+body, p, h1, h2, h3, ul, li, a, textarea, span {margin: 0; padding: 0; font-family: 'Nanum Gothic', sans-serif; text-decoration: none;}
 section{background-color: #383838; color: white; padding: 0 3.125rem; min-height: calc(100% - 8.313rem); width: 100%; box-sizing: border-box;}
 ul{list-style: none; clear: both; width: 100%;}
 form{width: 100%;  -webkit-appearance:none; }
@@ -133,9 +133,24 @@ nav label{
 	min-width: 400px;
 }
 .hidden{
-	display: none;
+	display: none !important;
 }
 .modal hr{width:100%; margin: 0 0 1.25rem 0; display: inline-block;}
+.input_check{    
+	background-color: #494945;
+    color: white;
+    width: calc(70% - 1.26rem);
+    float: left;
+    height: 2.875rem;
+    font-size: 0.6875rem;
+ 	line-height: 2.875rem;
+ 	box-sizing: border-box;
+    padding-left: 0.5rem;
+}
+.input_check input[type=checkbox]{
+	position: relative !important;
+	top: 0.21rem !important;
+}
  /*Close Button*/
 .close {
 color: #aaa;

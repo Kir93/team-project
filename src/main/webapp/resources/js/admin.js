@@ -18,17 +18,6 @@ function menu(id) {
 function home(url) {
 	window.open(url, "_blank");
 }
-/*Modal*/
-function openModal(MDnum) {
-	 modal = document.querySelector(MDnum);
-	 modal.classList.remove("hidden");
-	 overlay = document.getElementsByClassName("modal__overlay");
-	 openButton = document.getElementById("open");
-}
-function closeModal() {
-	 closeBtn = document.getElementsByClassName("close");
-	 modal.classList.add("hidden");
-}
 
 /*accordion*/
 function Accordion(){
