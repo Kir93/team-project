@@ -9,6 +9,8 @@
 		<link rel="stylesheet" href="/resources/css/reset.css">
 		<link rel="stylesheet" href="/resources/css/commonlayout.css">
 		<link rel="stylesheet" href="/resources/css/loginteam.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="/resources/js/login.js"></script>
 	</head>
 	<body>
 		<header>
@@ -31,14 +33,15 @@
 		
 	</header>
 		
-		<section > 
+		<section> 
+		<form>
 			 <div class = "login"> 
 			<h2> 로그인</h2>
 		   	<ul> 
-		   		<li><input type = "email" placeholder="이메일입력"  title="이메일입력" > </li>
-		   		<li><input type = "password" placeholder="비밀번호" title="비밀번호 입력"> </li>
+		   		<li><input type = "email" placeholder="이메일입력하세요."  title="이메일입력" required="required" id = "email"> </li>
+		   		<li><input type = "password" placeholder="비밀번호을 입력하세요." title="비밀번호 입력" required="required" id = "password"> </li>
 		   		<li><input type = "checkbox" id = "chk_id"><label for = "chk_id" > 아이디저장</label></li>
-		   		<li><button>로그인</button></li>
+		   		<li><button type="submit" >로그인</button></li>
 		   	</ul>
 		   <div>
 		   	<ul>
@@ -48,6 +51,7 @@
 			 </ul>   
 		   </div>
 		   </div>
+		</form>
 		</section>
 		
 		<footer>

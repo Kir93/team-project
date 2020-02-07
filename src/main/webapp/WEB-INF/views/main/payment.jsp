@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="/resources/css/reset.css" />
         <link rel="stylesheet" href="/resources/css/commonlayout.css" />
         <link rel="stylesheet" href="/resources/css/payment.css" />
+        <script src="/lib/jquery/3.4.1/dist/jquery.min.js"></script>
     </head>
     <body>
         <c:import url="/header" />
@@ -65,11 +66,11 @@
             </div>
             <div id="address">
                 <h2>배송지</h2>
-                <input type="text" value="인천광역시 미추홀구 연남로 35(관교동, 롯데백화점) 7층" />
+                <input type="text" id = "adress" value="인천광역시 미추홀구 연남로 35(관교동, 롯데백화점) 7층" />
             </div>
             <div id="address">
                 <h2>연락처</h2>
-                <input type="text" value="010-3333-4444" />
+                <input type="text" id = "tel"/>
             </div>
             <div id="pay">
                 <h2>결제수단</h2>
@@ -83,14 +84,14 @@
                 </label>
                 <div id="bankpage">
                     <label class="bold" for="username">입금자</label>
-                    <input type="text" id="username" value="OOO" />
+                    <input type="text" id="username" />
                     <p>
                         <span class="bold">입금은행</span>
-                        <span>104300-00-000000(국민)</span>
+                        <span id = "bank"></span>
                     </p>
                     <p>
                         <span class="bold">예금주</span>
-                        <span>LOGO</span>
+                        <span id = "depositor"></span>
                     </p>
                 </div>
                 <h3>최종결제 금액 : <span class="sumPrice bold">29,000 Won</span></h3>

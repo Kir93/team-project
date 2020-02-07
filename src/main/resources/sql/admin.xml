@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin">
+
+ <delete id="resetbank">
+ 	 TRUNCATE TABLE bank;
+ </delete>
+
+ <insert id="setbank" parameterType="Map">
+ 	INSERT INTO bank
+			(`depositor`, `bank`, `uno`) 
+		VALUES 
+			(#{depositor}, #{bank}, #{no});
+ </insert>
+ 
+ <select id="getOrder" resultType="Map">
+ 	SELECT o.no,
+	       case when o.payCB = 'C' then '카드결제'
+	            ELSE '무통장입금'
+	       END AS payCB,
+	       c.no,
+	       p.sname,
+	       (p.price * c.quantity) AS sumPrice,
+	       u.name,
+	       DATE_FORMAT(o.reg, '%Y-%m-%d %H:%i:%s') AS reg
+	FROM `order` AS o
+	INNER JOIN cart AS c
+	ON (o.`no` = c.ono)
+	INNER JOIN product AS p
+	ON (c.pno = p.`no`)
+	
+	INNER JOIN user AS u
+	ON (o.uno = u.`no`)
+ </select>
+  
+</mapper> 

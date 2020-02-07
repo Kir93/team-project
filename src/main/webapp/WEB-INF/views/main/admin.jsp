@@ -12,8 +12,9 @@
 		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap&subset=korean" rel="stylesheet">
 		<script src="/lib/jquery/3.4.1/dist/jquery.min.js"></script>
 		<script type="text/javascript" src="/resources/js/admin.js"></script>
+		<script src="/resources/js/product.js"></script>
 	</head>
-	<body  onload="Accordion()">
+	<body onload="Accordion()">
 	 	<header>
 			<nav id = "nav_tab">
 				<ul>
@@ -138,24 +139,23 @@
 					<h1 class = "title2">상품등록</h1>
 					<hr>
 					<div class = "inputarea">
-						<form autocomplete="off">
+						<form id="setProduct">
 							<ul>
 								<li>
-									<label class = "li_tatle" for = "item_name1">상품명</label>
-									<input class = "input_name" type = "text" id = "item_name1" placeholder="EX : 나만알고싶은 세미오버 싱글코트" >
+									<label class = "li_tatle" for = "sname">상품명</label>
+									<input class = "input_name" type = "text" id = "sname" name="sname" placeholder="EX : 나만알고싶은 세미오버 싱글코트" >
 								</li>	
 							</ul>	
 							<ul>
 								<li>
 									<label class = "li_tatle" for = "price">판매가</label>
-									<input class = "input_price" type = "text" id = "price"
-									 placeholder="EX : 48,500">	 
+									<input class = "input_price" type = "text" id = "price" name="price" placeholder="EX : 48,500">	 
 								</li>
 							</ul>
 							<ul>	
 								<li>
-									<label class = "li_tatle" for = "thumbnail_id">썸네일이미지등록</label>
-									<input type ="file" name = "thumbnail" id = "thumbnail_id">
+									<label class = "li_tatle" for = "thumbnailImg">썸네일이미지등록</label>
+									<input type ="file" name = "thumbnailImg" id = "thumbnailImg">
 								</li>
 							</ul>
 							<ul>	
@@ -173,8 +173,8 @@
 							</ul>
 							<ul>						
 								<li>
-									<label class = "li_tatle" for = "explain2">상품상세설명</label>
-									<input class = "" type ="file" name = "profile" id = "explain2">
+									<label class = "li_tatle" for = "detailImg">상품상세설명</label>
+									<input class = "" type ="file" name = "detailImg" id = "detailImg">
 	 <!-- 					        <textarea class = "li_input inputexplain2" name = "txt"></textarea>  텍스트 --> 	
 								</li>
 							</ul>
@@ -729,8 +729,8 @@
 							<li class = "li_tatle item_name_li2"><input type = "checkbox" name ="" id = "checkboxAll"></li>
 							<li><label class = "item_name_li2">no</label></li>
 							<li><label class = "item_name_li1">주문상태</label></li>
-							<li><label class = "item_name_li1">주문번호</label></li>
 							<li><label class = "item_name_li1">상품코드</label></li>
+							<li><label class = "item_name_li1">상품명</label></li>
 							<li><label class = "item_name_li1">주문합계</label></li>
 							<li><label class = "item_name_li1">구매자명</label></li>
 							<li><label class = "item_name_li1">주문일자</label></li>
@@ -743,8 +743,8 @@
 							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" id = "checkboxAll"></li>
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">주문상태</label></li>
-							<li><label class = "item_inventory_li1">주문번호</label></li>
 							<li><label class = "item_inventory_li1">상품코드</label></li>
+							<li><label class = "item_inventory_li1">상품명</label></li>
 							<li><label class = "item_inventory_li1">주문합계</label></li>
 							<li><label class = "item_inventory_li1">구매자명</label></li>
 							<li><label class = "item_inventory_li1">주문일자</label></li>

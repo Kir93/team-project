@@ -58,7 +58,10 @@ $(document).ready(function(){
 				bank	  : $("#bank").val()
 		};
 		$.ajax({
-			
+			type: "POST",
+			url: "/bank",
+			data : JSON.stringify(params),
+			contentType : "application/json; charset=UTF-8"
 		}).done(function(d){
 			console.log("성공 : "+ d);
 			closeModal();

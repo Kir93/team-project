@@ -32,6 +32,25 @@ function countBtn(e, target, x) {
         if (count.value > 1) count.value--;
     }
 }
-function init() {}
-
+function init() {
+	bankView(); /*무통장입금*/
+	
+}
 init();
+
+/*무통장입금*/
+function bankView(){
+	$.ajax({
+		url:"bankView",
+		type:"POST"
+	}).done(function(d){
+		for(var i = 0; i < d.length; i++){
+			console.log(d[i]);
+		};
+		$("#tel").val(d[0].tel);
+		$("#username").val(d[0].name);
+		$("#depositor").text(d[1].depositor);
+		$("#bank").text(d[1].bank);
+	});
+}
+
