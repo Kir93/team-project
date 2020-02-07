@@ -152,7 +152,7 @@ $(document).ready(function() {
 	                    enctype: "multipart/form-data",
 	                    processData: false,
 	                    contentType: false,
-	                    cache: false,
+	                    cache: false ,
 	                    data: form
 	                }).done(function(data) {
 	                	console.log(data);
