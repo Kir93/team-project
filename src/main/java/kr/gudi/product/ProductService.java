@@ -56,12 +56,50 @@ public class ProductService {
 			FileUtils.copyInputStreamToFile(tImg.getInputStream(), new File(tPath));
 			FileUtils.copyInputStreamToFile(dImg.getInputStream(), new File(dPath));
 			pd.setImage(img);
+			return true;
 			
 		} catch (IOException e) {
 			e.printStackTrace();
+			return false;
 		}
 		
-		return true;
+		
 //		return pd.setImage(tImg, dImg);
+	}
+	
+	public boolean upImage(MultipartFile tImg, MultipartFile dImg, int no) {
+		String tfilePath = null;
+		String dfilePath = null;
+		String tPath = null;
+		String dPath = null;
+		if(tImg != null) {
+			tfilePath = "/resources/upload/t" + no + ".png";
+			tPath = ROOT + tfilePath;
+		}
+		if(dImg != null) {
+			dfilePath = "/resources/upload/d" + no + ".png";
+			dPath = ROOT + dfilePath;
+		}
+		
+		System.out.println(tPath);
+		System.out.println(dPath);
+		Map<String, Object> img = new HashMap<String, Object>();
+		img.put("tPath", tfilePath);
+		img.put("dPath", dfilePath);
+		img.put("no", no);
+		
+		try {
+			if(tImg != null)
+				FileUtils.copyInputStreamToFile(tImg.getInputStream(), new File(tPath));
+			if(dImg != null)
+				FileUtils.copyInputStreamToFile(dImg.getInputStream(), new File(dPath));
+			pd.setImage(img);
+			return true;
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+		
 	}
 }

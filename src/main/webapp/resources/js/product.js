@@ -23,10 +23,15 @@ function repairProduct() {
         $("#rprice").val(data.price);
         var color = JSON.parse(data.color);
         var chkbox = $(".RcolorSelect");
+	    for(var j = 0; j < chkbox.length; j++){
+	    	chkbox[j].checked = false;
+	    }
         for (i = 0; i < chkbox.length; i++) {
-            if (chkbox[i].value == color[i]) {
-                chkbox[i].checked = true;
-            }
+        	for(j = 0; j < color.length; j++){
+        		if (chkbox[i].value == color[j]) {
+                    chkbox[i].checked = true;
+                }
+        	}
         }
         if (data.soldOut === "Y") $(".soldOut")[0].checked = true;
     });
@@ -74,6 +79,7 @@ $(document).ready(function() {
                 cnt++;
             }
         }
+        if(chkbox.length === 0)	alert("컬러를 선택해 주세요.");
         e.preventDefault();
         var form = new FormData();
         form.append("tImg", $("#thumbnailImg")[0].files[0]);
@@ -95,7 +101,8 @@ $(document).ready(function() {
                     cache: false,
                     data: form
                 }).done(function(data) {
-                    alert(data);
+                    alert("등록성공!");
+                    closeModal()
                 });
             } else alert("등록실패!");
         });
@@ -115,6 +122,7 @@ $(document).ready(function() {
                 cnt++;
             }
         }
+        if(chkbox.length === 0)	alert("컬러를 선택해 주세요.");
         e.preventDefault();
         params = {
         	no: $("#upno").val(),
@@ -122,30 +130,39 @@ $(document).ready(function() {
             price: parseInt($("#rprice").val()),
         };
         if(colors.length > 0)	params.color = JSON.stringify(colors)
-    	if($(".soldOut").val() == "Y")	params.soldOut = $('.soldOut').val();
+    	if($(".soldOut")[0].checked == true)	params.soldOut = $('.soldOut').val();
+    	else	params.soldOut = "N";
         uop.data = JSON.stringify(params);
         var form = new FormData();
 	 	var tImg = $("#rThumbnailImg")[0].files[0];
 	 	var dImg = $("#rDetailImg")[0].files[0];
         $.ajax(uop).done(function(data) {
-        	console.log(data);
-//           if (data > 0 && (tImg != undefined || dImg != undefined)) {
-//        	   if(tImg != undefined)
-//        		   form.append("tImg", $("#thumbnailImg")[0].files[0]);
-//        	   if(dImg != undefined)
-//        		   form.append("dImg", $("#detailImg")[0].files[0]);
-//               $.ajax({
-//                   type: "post",
-//                   url: "/setImage",
-//                   enctype: "multipart/form-data",
-//                   processData: false,
-//                   contentType: false,
-//                   cache: false,
-//                   data: form
-//               }).done(function(data) {
-//                   alert(data);
-//               });
-//           } else alert("수정실패!");
+           if (data > 0) {
+        	   if(tImg != undefined || dImg != undefined){
+	        	   if(tImg != undefined)
+	        		   form.append("tImg", $("#rThumbnailImg")[0].files[0]);
+	        	   else	form.append("tImg", null);
+	        	   if(dImg != undefined)
+	        		   form.append("dImg", $("#rDetailImg")[0].files[0]);
+	        	   else	form.append("dImg", null);
+	        	   form.append("no", $("#upno").val());
+	        	   $.ajax({
+	                    type: "post",
+	                    url: "/upImage",
+	                    enctype: "multipart/form-data",
+	                    processData: false,
+	                    contentType: false,
+	                    cache: false,
+	                    data: form
+	                }).done(function(data) {
+	                	console.log(data);
+	                });
+        	   }
+        	   alert("수정성공!");
+        	   $("#rThumbnailImg").val("");
+        	   $("#rDetailImg").val("");
+        	   closeModal();
+           } else alert("수정실패!");
         });
     });
 });

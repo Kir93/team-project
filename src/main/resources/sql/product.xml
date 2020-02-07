@@ -19,13 +19,26 @@
 	<insert id="setProduct" parameterType="Map">
 		INSERT INTO product (sname, price, color) VALUE (#{sname}, #{price}, #{color})
 	</insert>
+	<update id="upProduct" parameterType="Map">
+		UPDATE product SET
+		sname = #{sname},
+		price = #{price},
+		color = #{color},
+		soldOut = #{soldOut}
+		WHERE no = #{no}
+	</update>
 	<select id="getImgNo" resultType="Integer">
 		SELECT `no` FROM product ORDER BY `no` DESC LIMIT 1;
 	</select>
 	<update id="setImage" parameterType="Map">
   		UPDATE product SET
-  		`thumbnailImg` = #{tPath},
+  		<if test="tPath != null">
+  		`thumbnailImg` = #{tPath}
+  		</if>
+  		<if test="tPath != null and dPath != null">,</if>
+  		<if test="dPath != null">
   		`detailImg` = #{dPath}
+  		</if>
   		WHERE no = #{no} 
   </update>
 </mapper>
