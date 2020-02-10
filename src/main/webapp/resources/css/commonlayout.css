@@ -113,10 +113,6 @@ footer h4 a{
 	html{
 		font-size: 12px;
 	}
-	section, header, footer{
-		width: 100%;
-		min-width: 100%;
-	}
 	section{
 		padding: 0 4rem;
 	}
