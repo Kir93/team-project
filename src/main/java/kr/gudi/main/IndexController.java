@@ -37,7 +37,6 @@ public class IndexController {
 	
 	@RequestMapping(value="choseList", method=RequestMethod.POST)
 	public String choseList(@RequestBody int no, Model model) {
-		System.out.println(no); 
 		model.addAttribute("data", is.choseList(no));
 		return "index/mainList";
 	}

@@ -24,13 +24,11 @@ public class ProductController {
 	
 	@RequestMapping(value = "setProduct", method = RequestMethod.POST)
 	public @ResponseBody int setProduct(@RequestBody Map<String, Object> paramMap) {
-		System.out.println(paramMap);
 		return ps.setProduct(paramMap);
 	}
 	
 	@RequestMapping(value = "upProduct", method = RequestMethod.POST)
 	public @ResponseBody int upProduct(@RequestBody Map<String, Object> paramMap) {
-		System.out.println(paramMap);
 		return ps.upProduct(paramMap);
 	}
 	
@@ -41,7 +39,6 @@ public class ProductController {
 	
 	@RequestMapping(value = "upImage", method = RequestMethod.POST)
 	public @ResponseBody boolean upImage(HttpServletRequest res) {
-		System.out.println("--");
 		MultipartHttpServletRequest mhsr = (MultipartHttpServletRequest) res;
 		MultipartFile tImg =  mhsr.getFile("tImg");
 		MultipartFile dImg =  mhsr.getFile("dImg");
@@ -63,10 +60,6 @@ public class ProductController {
 	
 	@RequestMapping(value="findProduct", method=RequestMethod.POST)
 	public @ResponseBody Map<String, Object> findProduct(@RequestBody String no) {
-		System.out.println(no);
-//		model.addAttribute("find", ps.findProduct(no));
-//		System.out.println(model);
-//		return "main/admin";
 		return ps.findProduct(no);
 	}
 	

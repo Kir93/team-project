@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="/resources/css/commonlayout.css" />
 		<link rel="stylesheet" href="/resources/css/item.css" />
 		<script src="/lib/jquery/3.4.1/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="/resources/js/item.js"></script>
         <script>
 	        $(document).ready(function() {
 	        	var colors = JSON.parse('${item.color}');
@@ -23,10 +24,10 @@
 	<aside>
 		<ul class="js-bar">
 			<li onclick="topPage();" class="js-top">▲</li>
-			<li><a href="main/payment">BUY</a></li>
-			<li><a href="main/shoppingBasket"><img src="/resources/images/shoppingCart-W.png" alt="장바구니" /></a></li>
+			<li onclick="buyNow(${sessionScope.User.no})">BUY</li>
+			<li onclick="cartNow(${sessionScope.User.no})"><img src="/resources/images/shoppingCart-W.png" alt="장바구니" /></li>
 			<c:if test="${sessionScope.User.no != null}">
-			<li onclick="choseItem();" class="js-chose chose">♡</li>
+			<li onclick="choseItem(${sessionScope.User.no})" class="js-chose chose">♡</li>
 			</c:if>
 		</ul>
 	</aside>
@@ -34,12 +35,14 @@
 		<div id="itemArea">
 			<img src="${ item.thumbnailImg }" alt="${ item.sname }" />
 			<div>
+				<input id="no" type="hidden" value="${ item.no }" />
 				<h2>${ item.sname }</h2>
 				<p class="price"><fmt:formatNumber value="${ item.price }" type="currency" /></p>
+				<input id="price" type="hidden" value="${ item.price }" />
 				<p class="amount">
 					<span class="countName">수량</span>
 					<span class="countBtn" onclick="countBtn(event, this, 0)">-</span>
-					<span><input class="js-count" type="text" value="1" /></span>
+					<span><input class="js-count count" type="text" value="1" /></span>
 					<span class="countBtn" onclick="countBtn(event, this, 1)">+</span>
 				</p>
 				<p class="color">
@@ -49,9 +52,9 @@
 					</select>
 				</p>
 				<div id="btnArea">
-					<span class="buybtn" onclick="location.href='/main/payment';">BUY NOW</span>
-					<span class="cartbtn" onclick="location.href='/main/shoppingBasket';"><img alt="cart" src="/resources/images/shoppingCart-W.png"></span>
-					<span onclick="choseItem();" class="js-chose chose">♡</span>
+					<span class="buybtn" onclick="buyNow(${sessionScope.User.no})">BUY NOW</span>
+					<span class="cartbtn" onclick="cartNow(${sessionScope.User.no})"><img alt="cart" src="/resources/images/shoppingCart-W.png"></span>
+					<span onclick="choseItem(${sessionScope.User.no})" class="js-chose chose">♡</span>
 				</div>
 			</div>
 		</div>
@@ -60,6 +63,5 @@
 		</div>
 	</section>
 	<c:import url="/footer" />
-	<script type="text/javascript" src="/resources/js/item.js"></script>
 </body>
 </html>

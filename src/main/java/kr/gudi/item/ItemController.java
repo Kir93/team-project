@@ -22,7 +22,12 @@ public class ItemController {
 	@RequestMapping("/main/item")
 	public String itemView(@RequestParam("no") int no, Model model) {
 		model.addAttribute("item", is.itemView(no));
-		System.out.println(is.itemView(no));
 		return "main/item";
+	}
+	
+	@RequestMapping(value="setCart", method=RequestMethod.POST)
+	public @ResponseBody int setCart(@RequestBody Map<String, Object> paramMap) {
+		System.out.println(paramMap);
+		return is.setCart(paramMap);
 	}
 }
