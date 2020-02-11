@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,10 +13,10 @@
 			<c:if test="${sessionScope.User.no != null}">
 		    	<span class="js-chose" onclick="choseItem(event, this)">♥</span>
 		    </c:if>
-		    	<a href="/main/item"><img src="${ row.thumbnailImg }" alt="${ row.sname }"/></a>
+		    	<a href="/main/item?no=${ row.no }"><img src="${ row.thumbnailImg }" alt="${ row.sname }"/></a>
 		    	<div class="itemArea">
 		        	<p class="itemName"><a href="/main/item">${ row.sname }</a></p>
-		        	<p class="itemPrice"><a href="/main/item">${ row.price }</a></p>
+		        	<p class="itemPrice"><a href="/main/item"><fmt:formatNumber value="${ row.price }" type="currency" /></a></p>
 		    	</div>
 		</div>
 	</c:forEach>

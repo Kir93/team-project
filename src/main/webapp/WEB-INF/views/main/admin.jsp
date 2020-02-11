@@ -80,11 +80,11 @@
 								<li>
 									<label class = "li_tatle" for = "color">상품컬러</label>
 									<div class = "input_check">
-										<input class = "colorSelect" name="color[]" type = "checkbox" value="B"><span>Black</span>
-										<input class = "colorSelect" name="color[]" type = "checkbox" value="W"><span>White</span>
-										<input class = "colorSelect" name="color[]" type = "checkbox" value="G"><span>Gray</span>
-										<input class = "colorSelect" name="color[]" type = "checkbox" value="Be"><span>Blue</span>
-										<input class = "colorSelect" name="color[]" type = "checkbox" value="R"><span>Red</span>
+										<input class = "colorSelect" name="color[]" type = "checkbox" value="Black"><span>Black</span>
+										<input class = "colorSelect" name="color[]" type = "checkbox" value="White"><span>White</span>
+										<input class = "colorSelect" name="color[]" type = "checkbox" value="Gray"><span>Gray</span>
+										<input class = "colorSelect" name="color[]" type = "checkbox" value="Blue"><span>Blue</span>
+										<input class = "colorSelect" name="color[]" type = "checkbox" value="Red"><span>Red</span>
 									</div>
 								</li>
 								
