@@ -27,7 +27,6 @@ public class ItemController {
 	
 	@RequestMapping(value="setCart", method=RequestMethod.POST)
 	public @ResponseBody int setCart(@RequestBody Map<String, Object> paramMap) {
-		System.out.println(paramMap);
 		return is.setCart(paramMap);
 	}
 }

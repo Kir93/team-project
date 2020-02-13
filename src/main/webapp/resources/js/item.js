@@ -84,6 +84,7 @@ function buyNow(userInfo) {
             var params = {
                     pno: $("#no").val(),
                     uno: userInfo,
+                    sname: $("#sname").val(),
                     price: $("#price").val(),
                     count: $(".count").val(),
                     color: $("#colorList").val()

@@ -37,6 +37,7 @@
 			<div>
 				<input id="no" type="hidden" value="${ item.no }" />
 				<h2>${ item.sname }</h2>
+				<input id="sname" type="hidden" value="${ item.sname }" />
 				<p class="price"><fmt:formatNumber value="${ item.price }" type="currency" /></p>
 				<input id="price" type="hidden" value="${ item.price }" />
 				<p class="amount">

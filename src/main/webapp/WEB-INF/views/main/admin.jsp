@@ -134,11 +134,11 @@
 								<li>
 									<label class = "li_tatle" for = "explain1">상품컬러</label>
 									<div class = "input_check">
-										<input class = "RcolorSelect" name="color[]" type = "checkbox" value="B"><span>Black</span>
-										<input class = "RcolorSelect" name="color[]" type = "checkbox" value="W"><span>White</span>
-										<input class = "RcolorSelect" name="color[]" type = "checkbox" value="G"><span>Gray</span>
-										<input class = "RcolorSelect" name="color[]" type = "checkbox" value="Be"><span>Blue</span>
-										<input class = "RcolorSelect" name="color[]" type = "checkbox" value="R"><span>Red</span>
+										<input class = "RcolorSelect" name="color[]" type = "checkbox" value="Black"><span>Black</span>
+										<input class = "RcolorSelect" name="color[]" type = "checkbox" value="White"><span>White</span>
+										<input class = "RcolorSelect" name="color[]" type = "checkbox" value="Gray"><span>Gray</span>
+										<input class = "RcolorSelect" name="color[]" type = "checkbox" value="Blue"><span>Blue</span>
+										<input class = "RcolorSelect" name="color[]" type = "checkbox" value="Red"><span>Red</span>
 									</div>
 								</li>
 							</ul>
@@ -288,7 +288,7 @@
 				<div class = "item_inventory2">	
 					<form>
 						<ul>
-							<li class = "li_tatle item_name_li2"><input type = "checkbox" name ="" id = "checkboxAll"></li>
+							<li class = "li_tatle item_name_li2"><input type = "checkbox" name ="" class = "checkboxAll"></li>
 							<li><label class = "item_name_li2">no</label></li>
 							<li><label class = "item_name_li1">상품구분</label></li>
 							<li><label class = "item_name_li1">상품코드</label></li>
@@ -392,7 +392,7 @@
 					<div class = "item_inventory2">	
 						<form>
 							<ul>
-								<li class = "li_tatle item_name_li2"><input type = "checkbox" name ="" id = "checkboxAll"></li>
+								<li class = "li_tatle item_name_li2"><input type = "checkbox" name ="" class = "checkboxAll"></li>
 								<li><label class = "item_name_li2">no</label></li>
 								<li><label class = "item_name_li1">문의상태</label></li>
 								<li><label class = "item_name_li1">이름</label></li>
@@ -508,7 +508,7 @@
 				<div class = "item_inventory2">	
 					<form>
 						<ul>
-							<li class = "li_tatle item_name_li2"><input type = "checkbox" name ="" id = "checkboxAll"></li>
+							<li class = "li_tatle item_name_li2"><input type = "checkbox" name ="" class = "checkboxAll"></li>
 							<li><label class = "item_name_li2">no</label></li>
 							<li><label class = "item_name_li1">성별</label></li>
 							<li><label class = "item_name_li1">이름</label></li>
@@ -644,7 +644,7 @@
 				<div class = "item_inventory2">	
 					<form>
 						<ul>
-							<li class = "li_tatle item_name_li2"><input type = "checkbox" name ="" id = "checkboxAll"></li>
+							<li class = "li_tatle item_name_li2"><input type = "checkbox" name ="" class = "checkboxAll"></li>
 							<li><label class = "item_name_li2">no</label></li>
 							<li><label class = "item_name_li1">주문상태</label></li>
 							<li><label class = "item_name_li1">주문번호</label></li>
@@ -658,7 +658,7 @@
 				<div class = "item_inventory">
 					<form>		
 						<ul>
-							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" id = "checkboxAll"></li>
+							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" class = "checkboxAll"></li>
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">주문상태</label></li>
 							<li><label class = "item_inventory_li1">주문번호</label></li>
@@ -668,7 +668,7 @@
 							<li><label class = "item_inventory_li1">주문일자</label></li>
 						</ul>
 						<ul>
-							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" id = "checkboxAll"></li>
+							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" class = "checkboxAll"></li>
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">주문상태</label></li>
 							<li><label class = "item_inventory_li1">주문번호</label></li>
@@ -678,7 +678,7 @@
 							<li><label class = "item_inventory_li1">주문일자</label></li>
 						</ul>
 						<ul>
-							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" id = "checkboxAll"></li>
+							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" class = "checkboxAll"></li>
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">주문상태</label></li>
 							<li><label class = "item_inventory_li1">주문번호</label></li>
@@ -688,7 +688,7 @@
 							<li><label class = "item_inventory_li1">주문일자</label></li>
 						</ul>
 						<ul>
-							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" id = "checkboxAll"></li>
+							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" class = "checkboxAll"></li>
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">주문상태</label></li>
 							<li><label class = "item_inventory_li1">주문번호</label></li>
@@ -698,7 +698,7 @@
 							<li><label class = "item_inventory_li1">주문일자</label></li>
 						</ul>
 						<ul>
-							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" id = "checkboxAll"></li>
+							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" class = "checkboxAll"></li>
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">주문상태</label></li>
 							<li><label class = "item_inventory_li1">주문번호</label></li>
@@ -708,7 +708,7 @@
 							<li><label class = "item_inventory_li1">주문일자</label></li>
 						</ul>
 						<ul>
-							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" id = "checkboxAll"></li>
+							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" class = "checkboxAll"></li>
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">주문상태</label></li>
 							<li><label class = "item_inventory_li1">주문번호</label></li>
@@ -718,7 +718,7 @@
 							<li><label class = "item_inventory_li1">주문일자</label></li>
 						</ul>
 						<ul>
-							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" id = "checkboxAll"></li>
+							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" class = "checkboxAll"></li>
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">주문상태</label></li>
 							<li><label class = "item_inventory_li1">주문번호</label></li>
@@ -728,7 +728,7 @@
 							<li><label class = "item_inventory_li1">주문일자</label></li>
 						</ul>
 						<ul>
-							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" id = "checkboxAll"></li>
+							<li class = "li_tatle item_inventory_li2"><input type = "checkbox" name ="" class = "checkboxAll"></li>
 							<li><label class = "item_inventory_li2">no</label></li>
 							<li><label class = "item_inventory_li1">주문상태</label></li>
 							<li><label class = "item_inventory_li1">주문번호</label></li>

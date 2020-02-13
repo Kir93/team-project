@@ -6,4 +6,8 @@
   <select id="test" resultType="Integer">
   	select 1
   </select>
+  
+  <select id="getChose" parameterType="Map" resultType="Integer"> 
+  	SELECT pno FROM chose WHERE delYn = 'N' AND uno = #{no}
+  </select>
 </mapper>

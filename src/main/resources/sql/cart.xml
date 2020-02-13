@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cart">
+
+	<select id="cartView" resultType="Map">
+		SELECT c.no, c.quantity, c.color, p.sname, p.price, p.color AS colorList FROM cart AS c
+		INNER JOIN product AS p ON (c.pno = p.`no`)
+		WHERE c.uno = #{no} AND sdata = "S"
+	</select>
+	
+	<update id="repairCount" parameterType="Map">
+		UPDATE cart SET quantity = #{quantity} WHERE no = #{no};
+	</update>
+	
+	<update id="repairColor" parameterType="Map">
+		UPDATE cart SET color = #{color} WHERE no = #{no};
+	</update>
+	
+	<update id="delAllCart" parameterType="String">
+		UPDATE cart
+		SET sdata = "D"
+		WHERE uno = #{no};
+	</update>
+	
+	<update id="delSelectCart" parameterType="Map">
+		UPDATE cart
+		SET sdata = "D"
+		WHERE uno = #{uno} AND `no` = ${no};
+	</update>
+</mapper>

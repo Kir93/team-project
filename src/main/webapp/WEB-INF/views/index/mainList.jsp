@@ -11,7 +11,9 @@
 	<c:forEach var="row" items="${data.result}">
 		<div class="item">
 			<c:if test="${sessionScope.User.no != null}">
-		    	<span class="js-chose" onclick="choseItem(event, this)">♥</span>
+				<c:forEach var="pno" items="${sessionScope.Chose}">
+					<span class="js-chose" onclick="choseItem(event, this)">${pno == row.no ? "♥" : "♡"}</span>
+		    	</c:forEach>
 		    </c:if>
 		    	<a href="/main/item?no=${ row.no }"><img src="${ row.thumbnailImg }" alt="${ row.sname }"/></a>
 		    	<div class="itemArea">

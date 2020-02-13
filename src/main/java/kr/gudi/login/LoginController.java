@@ -4,6 +4,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,13 +18,14 @@ public class LoginController {
 	
 		@Autowired private LoginService loginService;
 		
+		@Autowired private SqlSession sql;
+		
 		@RequestMapping(value = "/loginTeam", method = RequestMethod.POST)
 		public @ResponseBody boolean getUser(UserBean ub, HttpSession session){
 			Map<String, Object> userMap = loginService.getUser(ub);
-			System.out.println(userMap);
 			if(userMap != null) {
 				session.setAttribute("User", userMap);
-				System.out.println("User : " + session.getAttribute("User"));
+				session.setAttribute("Chose", sql.selectList("sql.getChose", userMap));
 				return true;
 			}			
 			return false;
