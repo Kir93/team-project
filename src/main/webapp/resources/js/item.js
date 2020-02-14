@@ -17,19 +17,43 @@ $(document).ready(function() {
 });
 // 찜한목록 추가 삭제를 위한 Function
 
-function choseItem(userInfo) {
-    const items = document.querySelectorAll(".js-chose");
-    if (userInfo === undefined) {
-        alert("로그인 후 사용가능합니다.");
-        location.href = "/main/loginTeam";
+function choseItem(uno, pno, target) {
+    const item = target;
+    if (item.innerHTML == "♡") {
+        var params = {
+            uno: uno,
+            pno: pno,
+        };
+        $.ajax({
+            url: "/setChose",
+            type: "post",
+            data: JSON.stringify(params),
+            contentType: "application/json; charset=UTF-8"
+        }).done(function(data) {
+            console.log(data);
+            if (data > 0) {
+                item.innerHTML = "♥";
+                location.reload();
+            }
+        });
     } else {
-        if (items[0].innerHTML == "♡") {
-            items[0].innerHTML = "♥";
-            items[1].innerHTML = "♥";
-        } else {
-            items[0].innerHTML = "♡";
-            items[1].innerHTML = "♡";
-        }
+        var no = target.parentNode.querySelector(".no").value;
+        var params = {
+            uno: uno,
+            no: no
+        };
+        $.ajax({
+            url: "/delChose",
+            type: "post",
+            data: JSON.stringify(params),
+            contentType: "application/json; charset=UTF-8"
+        }).done(function(data) {
+            console.log(data);
+            if (data > 0) {
+                item.innerHTML = "♡";
+                location.reload();
+            }
+        });
     }
 }
 

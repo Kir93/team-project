@@ -4,6 +4,9 @@ package kr.gudi.main;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class IndexController {
 
 	@Autowired IndexService is;
+	@Autowired SqlSession sql;
 	
 	@RequestMapping(value="mainList", method=RequestMethod.POST)
 	public String mainList(Model model) {
@@ -39,5 +43,25 @@ public class IndexController {
 	public String choseList(@RequestBody int no, Model model) {
 		model.addAttribute("data", is.choseList(no));
 		return "index/mainList";
+	}
+	
+	@RequestMapping(value="setChose", method=RequestMethod.POST)
+	public @ResponseBody int setChose(@RequestBody Map<String, Object> paramMap, HttpSession session) {
+		if(is.setChose(paramMap) > 0) {
+			session.setAttribute("Chose", sql.selectList("chose.getChose", paramMap));
+			System.out.println(session.getAttribute("Chose"));
+			return 1;
+		}
+		return 0;
+	}
+	
+	@RequestMapping(value="delChose", method=RequestMethod.POST)
+	public @ResponseBody int delChose(@RequestBody Map<String, Object> paramMap, HttpSession session) {
+		if(is.delChose(paramMap) > 0) {
+			session.setAttribute("Chose", sql.selectList("chose.getChose", paramMap));
+			System.out.println(session.getAttribute("Chose"));
+			return 1;
+		}
+		return 0;
 	}
 }

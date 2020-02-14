@@ -13,7 +13,6 @@ public class ViewController {
 	@RequestMapping("/{name}")
 	public String main(@PathVariable("name") String name, HttpSession session) {
 		String url = "main/" + name;
-//		System.out.println(session.getAttribute("User"));
 		return url;
 	}
 }

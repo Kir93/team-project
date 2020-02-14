@@ -25,4 +25,12 @@ public class IndexService {
 	public Map<String, Object> choseList(int no) {
 		return id.choseList(no);
 	}
+	
+	public int setChose(Map<String, Object> paramMap) {
+		return id.setChose(paramMap);
+	}
+	
+	public int delChose(Map<String, Object> paramMap) {
+		return id.delChose(paramMap);
+	}
 }

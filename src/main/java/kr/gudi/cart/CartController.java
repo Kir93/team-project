@@ -22,6 +22,7 @@ public class CartController {
 	@RequestMapping("/main/shoppingBasket")
 	public String cartView(@RequestParam("no") int no, Model model) {
 		model.addAttribute("cart", cs.cartView(no));
+		System.out.println(model);
 		return "main/shoppingBasket";
 	}
 	

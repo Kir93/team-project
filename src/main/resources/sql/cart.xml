@@ -5,7 +5,7 @@
 <mapper namespace="cart">
 
 	<select id="cartView" resultType="Map">
-		SELECT c.no, c.quantity, c.color, p.sname, p.price, p.color AS colorList FROM cart AS c
+		SELECT c.no, c.pno, c.quantity, c.color, p.sname, p.price, p.color AS colorList FROM cart AS c
 		INNER JOIN product AS p ON (c.pno = p.`no`)
 		WHERE c.uno = #{no} AND sdata = "S"
 	</select>

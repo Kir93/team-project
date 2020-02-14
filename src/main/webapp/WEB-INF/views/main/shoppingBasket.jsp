@@ -57,6 +57,7 @@
 	                       <li class="size-0"><input name="order[]" class="order" type="checkbox" value="${row.no}" checked="checked" /></li>
 	                       <li class="size-1">
 	                       		<input type="hidden" name="sname[]" class="sname" value="${row.sname}" />
+	                       		<input type="hidden" name="pno[]" class="pno" value="${row.pno}" />
 	                       		${row.sname}
 	                       	</li>
 						   <li class="size-3">

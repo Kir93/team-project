@@ -21,13 +21,28 @@
     </head>
 <body>
 	<c:import url="/header" />
+	<c:set var="target" value="false"/>
+	<c:forEach var="chose" items="${sessionScope.Chose}">
+		<c:if test="${chose.pno == item.no}">
+			<c:set var="target" value="true"/>
+			<c:set var="no" value="${chose.no}" />
+		</c:if>
+  	</c:forEach>
 	<aside>
 		<ul class="js-bar">
 			<li onclick="topPage();" class="js-top">▲</li>
 			<li onclick="buyNow(${sessionScope.User.no})">BUY</li>
 			<li onclick="cartNow(${sessionScope.User.no})"><img src="/resources/images/shoppingCart-W.png" alt="장바구니" /></li>
 			<c:if test="${sessionScope.User.no != null}">
-			<li onclick="choseItem(${sessionScope.User.no})" class="js-chose chose">♡</li>
+				<c:choose>
+					<c:when test="${target}">
+						<li onclick="choseItem(${sessionScope.User.no}, ${item.no}, this)" class="js-chose chose">♥</li>
+						<input type="hidden" class="no" value="${no}" />
+					</c:when>
+					<c:otherwise>
+						<li onclick="choseItem(${sessionScope.User.no}, ${item.no}, this)" class="js-chose chose">♡</li>
+					</c:otherwise>
+				</c:choose>
 			</c:if>
 		</ul>
 	</aside>
@@ -55,7 +70,17 @@
 				<div id="btnArea">
 					<span class="buybtn" onclick="buyNow(${sessionScope.User.no})">BUY NOW</span>
 					<span class="cartbtn" onclick="cartNow(${sessionScope.User.no})"><img alt="cart" src="/resources/images/shoppingCart-W.png"></span>
-					<span onclick="choseItem(${sessionScope.User.no})" class="js-chose chose">♡</span>
+					<c:if test="${sessionScope.User.no != null}">
+						<c:choose>
+							<c:when test="${target}">
+								<span class="js-chose chose" onclick="choseItem(${sessionScope.User.no}, ${item.no}, this)">♥</span>
+								<input type="hidden" class="no" value="${no}" />
+							</c:when>
+							<c:otherwise>
+								<span class="js-chose chose" onclick="choseItem(${sessionScope.User.no}, ${item.no}, this)">♡</span>
+							</c:otherwise>
+						</c:choose>
+					</c:if>
 				</div>
 			</div>
 		</div>

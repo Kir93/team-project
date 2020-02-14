@@ -23,9 +23,12 @@ public class LoginController {
 		@RequestMapping(value = "/loginTeam", method = RequestMethod.POST)
 		public @ResponseBody boolean getUser(UserBean ub, HttpSession session){
 			Map<String, Object> userMap = loginService.getUser(ub);
+			System.out.println(userMap);
 			if(userMap != null) {
 				session.setAttribute("User", userMap);
-				session.setAttribute("Chose", sql.selectList("sql.getChose", userMap));
+				session.setAttribute("Chose", sql.selectList("chose.getChose", userMap));
+				System.out.println("User : " + session.getAttribute("User"));
+				System.out.println("Chose : " + session.getAttribute("Chose"));
 				return true;
 			}			
 			return false;

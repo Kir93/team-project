@@ -1,5 +1,5 @@
 /**
- * shoppingBasket JS
+.0 * shoppingBasket JS
  */
 $(document).ready(function() {
     $("#allchk").click(function() {
@@ -143,34 +143,39 @@ function delSelectCart(userNo) {
             } else alert("문제가 발생했습니다.");
         });
     }
-
-    function selectCartSend() {
-        var paramList = [];
-        var params;
-        var chkbox = $(".order");
-        var sname = $(".sname");
-        var color = $(".colorList");
-        var price = $(".price");
-        var quantity = $(".count");
-        var sumPrice = $(".sumPrice");
-        for (var i = 0; i < $(".order").length; i++) {
-            if (chkbox[i].checked === true) {
-                params = {
-                    no: chkbox[i].value,
-                    sname: sname[i].value,
-                    color: color[i].value,
-                    price: price[i].value,
-                    quantity: quantity[i].value,
-                    sumPrice: sumPrice[i].value
-                };
-                paramList[i] = params;
-            }
+}
+function selectCartSend() {
+    var idx = 0;
+    var paramList = [];
+    var params;
+    var chkbox = $(".order");
+    var pno = $(".pno");
+    var sname = $(".sname");
+    var color = $(".colorList");
+    var price = $(".price");
+    var quantity = $(".count");
+    var sumPrice = $(".sumPrice");
+    for (var i = 0; i < $(".order").length; i++) {
+        if (chkbox[i].checked === true) {
+            params = {
+                no: chkbox[i].value,
+                pno: pno[i].value,
+                sname: sname[i].value,
+                color: color[i].value,
+                price: price[i].value,
+                quantity: quantity[i].value,
+                sumPrice: sumPrice[i].value
+            };
+            paramList[idx] = params;
+            idx++;
         }
-        $.ajax({
-            url: "/selectCartView",
-            type: "post",
-            data: JSON.stringify(paramList),
-            contentType: "application/json; charset=UTF-8"
-        }).done(function(data) {});
     }
+    console.log(paramList);
+    return ;
+    $.ajax({
+        url: "/selectCartView",
+        type: "post",
+        data: JSON.stringify(paramList),
+        contentType: "application/json; charset=UTF-8"
+    }).done(function(data) {});
 }
