@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin">
+
+ <delete id="resetbank">
+ 	 TRUNCATE TABLE bank;
+ </delete>
+
+ <insert id="setbank" parameterType="Map">
+ 	INSERT INTO bank
+			(`depositor`, `bank`, `uno`) 
+		VALUES 
+			(#{depositor}, #{bank}, #{no});
+ </insert>
+ 
+ <select id="getOrder" resultType="Map">
+ 	SELECT o.no,
+	       case when o.payCB = 'C' then '카드결제'
+	            ELSE '무통장입금'
+	       END AS payCB,
+	       p.no AS pno,
+	       p.sname,
+	       (p.price * o.quantity) AS sumPrice,
+	       u.name,
+	       o.quantity,
+	       DATE_FORMAT(o.reg, '%Y-%m-%d %H:%i:%s') AS reg
+			FROM `order` AS o
+			JOIN product AS p
+			ON (o.pno = p.`no`)
+			JOIN user AS u
+			ON (o.uno = u.`no`)
+			order BY o.`no` DESC
+ </select>
+  
+ <select id = "getTotSales" resultType="Map">
+ 	SELECT SUM(case when `process` = 'S' then `sumPrice` ELSE 0 END) AS totSales, 
+		 COUNT(sumPrice) AS 'tot'
+	FROM `order`;
+ </select>
+  
+ <select id= "getMonthSales" resultType="Map">
+ 	SELECT SUM(case when `process` = 'S' then `sumPrice` ELSE 0 END) AS monthSales,
+			MONTH(`reg`) AS `month`
+	FROM `order`
+	where
+	<![CDATA[ ( `reg` > LAST_DAY(NOW() - INTERVAL 1 month) AND `reg` <= LAST_DAY(NOW())) ]]>
+	GROUP BY MONTH;
+ </select>
+  
+ <select id="lastMonthSales" resultType="Map">
+  	SELECT SUM(case when `process` = 'S' then `sumPrice` ELSE 0 END) AS lastMonthSales,
+			MONTH(`reg`) AS `month`
+	FROM `order`
+	where
+	<![CDATA[ (`reg` > LAST_DAY(NOW() - INTERVAL 2 month) AND `reg` <= LAST_DAY(NOW() - INTERVAL 1 month)) ]]>
+	GROUP BY MONTH;
+ </select>
+  
+  <select id="selectOrder" parameterType="Map" resultType="Map">
+	  	SELECT o.no,
+	       case when o.payCB = 'C' then '카드결제'
+	            ELSE '무통장입금'
+	       END AS payCB,
+	       p.no AS pno,
+	       p.sname,
+	       (p.price * o.quantity) AS sumPrice,
+	       u.name,
+	       o.quantity,
+	       DATE_FORMAT(o.reg, '%Y-%m-%d %H:%i:%s') AS reg
+	FROM `order` AS o
+	JOIN product AS p
+	ON (o.pno = p.`no`)
+	JOIN user AS u
+	ON (o.uno = u.`no`)
+	WHERE u.`name` LIKE '%${search}%' order BY o.`no` DESC
+  </select>
+  
+  <select id = "getDeposit" resultType="Map">
+  	SELECT o.no,
+	       case when o.payCB = 'C' then '카드결제'
+	            ELSE '무통장입금'
+	       END AS payCB,
+	       p.no AS pno,
+	       p.sname,
+	       (p.price * o.quantity) AS sumPrice,
+	       u.name,
+	       o.quantity,
+	       DATE_FORMAT(o.reg, '%Y-%m-%d %H:%i:%s') AS reg
+	FROM `order` AS o
+	JOIN product AS p
+	ON (o.pno = p.`no`)
+	JOIN user AS u
+	ON (o.uno = u.`no`)
+	WHERE payCB = 'B' order BY o.`no` DESC
+  </select>
+  
+  <select id="selectCancel" resultType="Map">
+  	SELECT c.`no`,
+		 case when c.`exchange` = 'C' then '교환'
+	            ELSE '반품'
+	       END AS `exchange`,
+	       c.ono,
+	       c.reason,
+	       p.sname,
+	       case when c.cstate = 'I' then '처리중'
+	       		when c.cstate = 'D' then '거절'
+	       	ELSE '승인'
+	       END AS `cstate`
+	FROM cancel AS c
+	INNER JOIN `order` AS o
+	ON (o.`no` = c.ono)
+	INNER JOIN product AS p
+	ON (o.pno = p.`no`)
+	order BY c.`no` DESC
+  </select>
+  
+  <update id = "approve" parameterType="Map">
+  	UPDATE cancel SET `cstate` = 'S' WHERE `no` = #{no} 
+  </update>
+  
+  <update id = "denial" parameterType="Map">
+  	UPDATE cancel SET `cstate` = 'D' WHERE `no` = #{no} 
+  </update>
+  
+  <select id="selectExchange" resultType="Map">
+  	SELECT c.`no`,
+		 case when c.`exchange` = 'C' then '교환'
+	            ELSE '반품'
+	       END AS `exchange`,
+	       c.ono,
+	       c.reason,
+	       p.sname,
+	       case when c.cstate = 'I' then '처리중'
+	       		when c.cstate = 'D' then '거절'
+	       	ELSE '승인'
+	       END AS `cstate`
+	FROM cancel AS c
+	INNER JOIN `order` AS o
+	ON (o.`no` = c.ono)
+	INNER JOIN product AS p
+	ON (o.pno = p.`no`)
+	WHERE `exchange` = 'C'
+	order BY c.`no` DESC
+  </select>
+   
+  <select id="selectRefund" resultType="Map">
+  	SELECT c.`no`,
+		 case when c.`exchange` = 'C' then '교환'
+	            ELSE '반품'
+	       END AS `exchange`,
+	       c.ono,
+	       c.reason,
+	       p.sname,
+	       case when c.cstate = 'I' then '처리중'
+	       		when c.cstate = 'D' then '거절'
+	       	ELSE '승인'
+	       END AS `cstate`
+	FROM cancel AS c
+	INNER JOIN `order` AS o
+	ON (o.`no` = c.ono)
+	INNER JOIN product AS p
+	ON (o.pno = p.`no`)
+	WHERE `exchange` = 'R'
+	order BY c.`no` DESC
+  </select>
+   
+  <select id = "countExchange" resultType="Map">
+  SELECT COUNT(`exchange`) as countExchange
+	FROM cancel
+	WHERE (`exchange` = 'C' AND cstate = 'I')
+  </select>
+  
+  <select id = "countRefund" resultType="Map">
+  SELECT COUNT(`exchange`) as countRefund
+	FROM cancel
+	WHERE (`exchange` = 'R' AND cstate = 'I')
+  </select>
+  
+  <select id = "finishExchange" resultType="Map">
+  SELECT COUNT(`exchange`) as finishExchange
+	FROM cancel
+	WHERE ( `exchange` = 'C' AND cstate = 'S') 
+  </select>
+  
+  <select id = "finishRefund" resultType="Map">
+  SELECT COUNT(`exchange`) as finishRefund
+	FROM cancel
+	WHERE (`exchange` = 'R' AND cstate = 'S') 
+  </select> 
+  
+  <select id="pay" resultType="Map">
+  SELECT COUNT(`process`) as pay
+	FROM `order`
+	WHERE `process` = 'S'
+  </select>
+   
+   <select id="SelectUserCount" resultType="Map">
+   SELECT COUNT(`no`) as SelectUserCount
+	FROM `user`
+	WHERE `delYn` = 'N'
+   </select>
+   
+   <select id="monthUserSignup" resultType="Map">
+   SELECT COUNT(`no`) as monthUserSignup, 
+		 MONTH(`reg`) AS `month`
+	FROM `user`
+	WHERE
+	`delYn` = 'N' AND 
+	<![CDATA[( `reg` > LAST_DAY(NOW() - interval 1 month) AND `reg` <= LAST_DAY(NOW()) )]]>
+	GROUP BY MONTH
+   </select>
+   
+   <select id="todaySales" resultType="Map">
+   SELECT SUM(case when `process` = 'S' then `sumPrice` ELSE 0 END) AS dateSales,
+ 			DATE_FORMAT(`reg`,'%Y-%m-%d') AS date
+	 FROM `order`
+	 WHERE DATE_FORMAT(`reg`,'%Y-%m-%d') = CURDATE()
+   </select>
+	
+   <select id="todayLogin" resultType="Map">
+   SELECT COUNT(`no`) AS todayLogin,
+			 DATE_FORMAT(`reg`,'%Y-%m-%d') AS date
+	FROM login
+	WHERE DATE_FORMAT(`reg`,'%Y-%m-%d') = CURDATE()
+   </select>
+   
+   <select id="monthLogin" resultType="Map">
+   SELECT COUNT(`no`) AS monthLogin,
+		 MONTH(`reg`) AS `month`
+	FROM login
+	where
+	<![CDATA[( `reg` > LAST_DAY(NOW() - INTERVAL 1 month) AND `reg` <= LAST_DAY(NOW()))]]>
+	GROUP BY MONTH;
+   </select>
+   
+</mapper> 

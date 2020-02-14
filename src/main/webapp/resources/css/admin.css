@@ -1,7 +1,7 @@
 @charset "UTF-8"; 
 html{height: 100%;}
 body{height: 100%;}
-body, p, h1, h2, h3, ul, li, a, textarea{margin: 0; padding: 0; font-family: 'Nanum Gothic', sans-serif; text-decoration: none;}
+body, p, h1, h2, h3, ul, li, a, textarea, span {margin: 0; padding: 0; font-family: 'Nanum Gothic', sans-serif; text-decoration: none;}
 section{background-color: #383838; color: white; padding: 0 3.125rem; min-height: calc(100% - 8.313rem); width: 100%; box-sizing: border-box;}
 ul{list-style: none; clear: both; width: 100%;}
 form{width: 100%;  -webkit-appearance:none; }
@@ -10,6 +10,14 @@ strong, h4{font-weight: 400;}
 hr{width: 95%; border-color: #ffffff; border: 0.5px solid; }
 .show{display:block !important;}
 #Register, #ItemList, #Main, #Delivery,#Inquiry,#Member,#Money{display:none;}
+/*스크롤바 숨기기*/
+.scroll {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
 ul::after, h3::after{
 	content: "";
 	clear: both;
@@ -136,6 +144,21 @@ nav label{
 	display: none;
 }
 .modal hr{width:100%; margin: 0 0 1.25rem 0; display: inline-block;}
+.input_check{    
+	background-color: #494945;
+    color: white;
+    width: calc(70% - 1.26rem);
+    float: left;
+    height: 2.875rem;
+    font-size: 0.6875rem;
+ 	line-height: 2.875rem;
+ 	box-sizing: border-box;
+    padding-left: 0.5rem;
+}
+.input_check input[type=checkbox]{
+	position: relative !important;
+	top: 0.21rem !important;
+}
  /*Close Button*/
 .close {
 color: #aaa;
@@ -231,21 +254,46 @@ cursor: pointer;
 .itemstatus a{width: 100%; display: block; float: left;}
 .itemstatus strong{ float: left; width: 60%;}
 -->	/*inventory, area*/
-.item_inventory{width: calc(100% - 3.75rem); height: 20rem; float: left; margin: 0 1.875rem 0 1.875rem; box-sizing: border-box; overflow: auto; overflow-x: auto;}
+.item_inventory{width: calc(100% - 3.75rem); float: left; margin: 0 1.875rem 0 1.875rem; box-sizing: border-box; overflow: hidden;} -->/*overflow-x: auto; height: 20rem;*/
+.item_inventory form{overflow-y: scroll; height: 350px;}
 .item_inventory ul{width: 100%;}
-.item_inventory2{float: left; margin: 1.875rem 1.875rem 0; width: calc(100% - 4.81rem); box-sizing: border-box;}
-.item_name_li1{float: left; width: 15%; min-height: 1.875rem; text-align: center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
-.item_name_li2{float: left; width: 3%; min-height: 1.875rem; text-align:  center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
-.item_name_li3{float: left; width: 45%; min-height: 1.875rem; text-align: center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
-.item_inventory_li1{float: left; width: 15%; min-height: 5rem; text-align: center; border: 1px solid; border-color: white; line-height: 5rem;}
-.item_inventory_li2{float: left; width: 3%; min-height: 5rem; text-align:  center; border: 1px solid; border-color: white; line-height: 5rem;}
-.item_inventory_li3{float: left; width: 45%; min-height: 5rem; text-align: center; border: 1px solid; border-color: white; line-height: 5rem;}
+.item_inventory2{float: left; margin: 1.875rem 1.875rem 0; width: calc(100% - 3.75rem); box-sizing: border-box;}
+.item_name_li1{float: left; width: 17.35%; min-height: 1.875rem; text-align: center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.item_name_li2{float: left; width: 5%; min-height: 1.875rem; text-align:  center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.item_name_li3{float: left; width: 37%; min-height: 1.875rem; text-align: center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.item_name_li4{float: left; width: 40%; min-height: 1.875rem; text-align: center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.item_inventory_li1{float: left; width: 17.35%; min-height: 5rem; text-align: center; border: 1px solid; border-color: white; line-height: 5rem;}
+.item_inventory_li2{float: left; width: 5%; min-height: 5rem; text-align:  center; border: 1px solid; border-color: white; line-height: 5rem;}
+.item_inventory_li3{float: left; width: 37%; min-height: 5rem; text-align: center; border: 1px solid; border-color: white; line-height: 5rem;}
+.item_inventory_li4{float: left; width: 40%; min-height: 5rem; text-align: center; border: 1px solid; border-color: white; line-height: 5rem;}
+.order_item_name_li1{float: left; width: 18.2%; min-height: 1.875rem; text-align: center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.order_item_name_li2{float: left; width: 5%; min-height: 1.875rem; text-align:  center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.order_item_name_li3{float: left; width: 10%; min-height: 1.875rem; text-align:  center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.order_item_name_li4{float: left; width: 7%; min-height: 1.875rem; text-align:  center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.order_inventory_li1{float: left; width: 18.2%; min-height: 5rem; text-align:  center; border: 1px solid; border-color: white; line-height: 5rem;}
+.order_inventory_li2{float: left; width: 5%; min-height: 5rem; text-align:  center; border: 1px solid; border-color: white; line-height: 5rem;}
+.order_inventory_li3{float: left; width: 10%; min-height: 5rem; text-align:  center; border: 1px solid; border-color: white; line-height: 5rem;}
+.order_inventory_li4{float: left; width: 7%; min-height: 5rem; text-align:  center; border: 1px solid; border-color: white; line-height: 5rem;}
+.user_item_name_li1{float: left; width: 5%; min-height: 1.875rem; text-align: center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.user_item_name_li2{float: left; width: 14%; min-height: 1.875rem; text-align:  center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.user_item_name_li3{float: left; width: 18.7%; min-height: 1.875rem; text-align:  center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.user_inventory_li1{float: left; width: 5%; min-height: 5rem; text-align:  center; border: 1px solid; border-color: white; line-height: 5rem;}
+.user_inventory_li2{float: left; width: 14%; min-height: 5rem; text-align:  center; border: 1px solid; border-color: white; line-height: 5rem;}
+.user_inventory_li3{float: left; width: 18.7%; min-height: 5rem; text-align:  center; border: 1px solid; border-color: white; line-height: 5rem;}
+.cancel_name_li1{float: left; width: 5%; min-height: 1.875rem; text-align: center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.cancel_name_li2{float: left; width: 13.2%; min-height: 1.875rem; text-align:  center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.cancel_name_li3{float: left; width: 36%; min-height: 1.875rem; text-align:  center; border: 1px solid; border-color: white; color: orange; line-height: 1.875rem;}
+.cancel_inventory_li1{float: left; width: 5%; min-height: 5rem; text-align:  center; border: 1px solid; border-color: white; line-height: 5rem;}
+.cancel_inventory_li2{float: left; width: 13.2%; min-height: 5rem; text-align:  center; border: 1px solid; border-color: white; line-height: 5rem;}
+.cancel_inventory_li3{float: left; width: 36%; min-height: 5rem; text-align:  center; border: 1px solid; border-color: white; line-height: 2.5rem; overflow-y: scroll;  height: 80px;}
 .btnset button{border:0; float: right; margin:0.625rem 0 0.625rem 0.625rem; background-color: #494945; color: white; cursor: pointer; padding: 0.875rem;}
 .btnset{border: 1px 0; border-color: white; height: 100%; width: calc(100% - 3.75rem); float: left; margin: 0 1.875rem;}
-/*answer area*/
-.answer{color: #004080;}
-.textAnswer{background-color: #777; color: #004080; width: calc(100% - 0.125rem); height: calc(100% - 0.125rem); resize: none; text-align: center; font-size: 1rem; border: 0; line-height: 2rem;}
-.textAnswer::placeholder{ color: #004080; font-size: 1rem; line-height: 4.875rem;}
+.multi {line-height: 16px;}
+/*answer area  height: calc(100% - 0.125rem);*/
+.answer{color: #ffd1bb;}
+.text_inventory_li3{float: left; width: 37%; min-height: 5rem; text-align: center; border: 1px solid; border-color: white;}
+.textAnswer{background-color: #383838; color: #ffd1bb; width: calc(100% - 0.125rem); resize: none; text-align: center; font-size: 1rem; border: 0; height: 2.75rem; overflow-y: scroll; padding-top: 2rem;}
+.textAnswer::placeholder{ color: #ffd1bb; font-size: 1rem; }
 textarea:focus::-webkit-input-placeholder {color:transparent;}
 .panel {display: none; overflow: hidden;}
 /*main area*/

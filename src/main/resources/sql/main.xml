@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main">
+
+	<select id="mainList" resultType="Map">
+		SELECT * FROM product WHERE `soldOut` = 'N';
+	</select>
+	<select id="newList" resultType="Map">
+		SELECT * FROM product WHERE `soldOut` = 'N' ORDER BY `reg` DESC;
+	</select>
+	<select id="bestList" resultType="Map">
+		SELECT b.*, (COUNT(a.pno)*a.quantity) AS cnt FROM `order` AS a
+		INNER JOIN product AS b ON (a.pno = b.`no`)
+		WHERE `soldOut` = 'N' GROUP BY a.pno ORDER BY `cnt` DESC;
+	</select>
+	<select id="choseList" resultType="Map">
+		SELECT b.*, a.sdata FROM cart AS a
+		INNER JOIN product AS b ON (a.pno = b.`no`)
+		WHERE (a.sdata = 'C' OR a.sdata = 'Y') AND a.uno = #{no}
+	</select>
+</mapper>

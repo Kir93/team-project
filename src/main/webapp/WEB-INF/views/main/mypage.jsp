@@ -97,7 +97,8 @@
        <th scope="row">주소</th>
        		<td class = "addr"> <input type="text" id="sample4_postcode" placeholder="우편번호">
 			<input id = button type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-			<input class="addr1-1" name="addr1"type="text" id="sample4_roadAddress" placeholder="도로명주소">
+			<input class="addr1-1" name="addr1"type="text" id="sample4_roadAdd
+			ress" placeholder="도로명주소">
 <!-- 			<input type="text" id="sample4_jibunAddress" placeholder="지번주소"> -->
 			<span id="guide" style="color:#999;display:none"></span>
 			<input class="addr1-1" name="addr2" type="text" id="sample4_detailAddress" placeholder="상세주소"></td>

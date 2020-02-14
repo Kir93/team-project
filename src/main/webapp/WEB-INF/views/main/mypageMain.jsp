@@ -10,16 +10,7 @@
 <link rel="stylesheet" href="/resources/css/reset.css">
 <link rel="stylesheet" href="/resources/css/commonlayout.css">
 <link rel="stylesheet" href="/resources/css/mypageMain.css">
-<!-- <!-- <script> --> 
-<!-- //     	function modal() { -->
-<!-- //     		if(document.getElementById("modal").style.display == "block"){ -->
-<!-- //     			document.getElementById("modal").style.display = "none"; -->
-<!-- //     		} else { -->
-<!-- //     			document.getElementById("modal").style.display = "block"; -->
-<!-- //     		}    		 -->
-<!-- // 		} -->
-    	
-<!-- <!--     </script> --> 
+
 </head>
 <body>
 <c:import url="/header" />
@@ -29,18 +20,7 @@
    <div class = "list1-1">
     <h3> 구매내역 목록  </h3> 
    <form class = "form" >
-<!--     <span> 기간별조회 </span> -->
-<!--  		<input id = "term15" type = "radio" value= "term15" name= "term"> -->
-<!--  		<label for ="term15">15일</label> -->
- 		
-<!--  		<input id = "termOneMonth" type = "radio" value= "termOneMonth" name= "term"> -->
-<!--  		<label for = "termOneMonth">1개월</label> -->
- 		
-<!--  		<input id = "termOneMonth" type = "radio" value= "termOneMonth" name= "term"> -->
-<!--  		<label for = "termThreeMonth">3개월</label> -->
- 		
-<!--  		<input id = "termSixMonth" type = "radio" value= "termSixMonth" name= "term"> -->
-<!--  		<label for = "termSixMonth">6개월</label> -->
+
 			<select name= date>
 					<option value=term15>15일</option>
 					<option value=termOneMonth>1개월</option>
@@ -70,30 +50,24 @@
 			  <li class = "li1"> <input id = "one" type = "radio" value= "one" name= "date"> </li>
 			  <li>19.01.12</li>
 			  <li>12345</li>
-			  <li class = "li2">$$$$$$</li>
+			  <li class = "li2"><a href= "./mypageMain1">$$$$$$</a></li>
 			  <li>50,000원</li>
 			  <li>처리현황</li>
 			  <li>배송조회</li>
-<!-- 			  <li>수취확인</li> -->
+
 		  </ul>
 		  
 		  
 		  
 		  	<ul>
-<!-- 		  	  <li class = "li1"> <input id = "two" type = "radio" value= "two" name= "date"> </li> -->
-<!-- 			  <li>19.5.09</li> -->
-<!-- 			  <li>12345</li> -->
-			 <li> 대표제품명</li>
-			 <li class = "li1"> <input id = "three" type = "radio" value= "three" name= "date"> </li>
+		  	  <li class = "li1"> <input id = "two" type = "radio" value= "two" name= "date"> </li>
+			  <li>19.5.09</li>
+			  <li>12345</li>
 			 <li >$$$$$$</li>
-			 <li > <input id = "three" type = "radio" value= "three" name= "date"> </li>
-			 <li >$$$$$$</li>
-			 <li > <input id = "three" type = "radio" value= "three" name= "date"> </li>
-			 <li >$$$$$$</li>
-<!-- 			  <li>50,000원</li> -->
-<!-- 			  <li>처리현황</li> -->
-<!-- 			  <li>배송조회</li> -->
-<!-- 			  <li>수취확인</li> -->
+			  <li>50,000원</li>
+			  <li>처리현황</li>
+			  <li>배송조회</li>
+			 
 		  </ul>
 		  	<ul>
 		  	  <li class = "li1"> <input id = "three" type = "radio" value= "three" name= "date"> </li>
@@ -103,7 +77,7 @@
 			  <li>50,000원</li>
 			  <li>처리현황</li>
 			  <li>배송조회</li>
-<!-- 			  <li>수취확인</li> -->
+
 		  </ul>  
 		  <ul>
 		      <li class = "li1"> <input id = "four" type = "radio" value= "four" name= "date"> </li>
@@ -113,7 +87,7 @@
 			  <li>50,000원</li>
 			  <li>처리현황</li>
 			  <li>배송조회</li>
-<!-- 			  <li>수취확인</li> -->
+
 		  </ul>
 		  	<ul>
 		  	  <li class = "li1"> <input id = "five" type = "radio" value= "five" name= "date"> </li>
@@ -123,7 +97,7 @@
 			  <li>50,000원</li>
 			  <li>처리현황</li>
 			  <li>배송조회</li>
-<!-- 			  <li>수취확인</li> -->
+
 		  </ul>
 		  	<ul>
 		  	  <li class = "li1"> <input id = "six" type = "radio" value= "six" name= "date"> </li>
@@ -133,7 +107,7 @@
 			  <li>50,000원</li>
 			  <li>처리현황</li>
 			  <li>배송조회</li>
-<!-- 			  <li>수취확인</li> -->
+
 		  </ul> 
 		  
 	  </div> 
@@ -179,6 +153,7 @@
 
 </section>
 <c:import url="/footer" />
+	<script type="text/javascript" src="/resources/js/mypage.js"></script>
 	<script type="text/javascript" src="/resources/js/mypageMain.js"></script>
 </body>
 </html>

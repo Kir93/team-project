@@ -1,5 +1,7 @@
 package kr.gudi.view;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -12,7 +14,8 @@ public class MainController {
 	}
 	
 	@RequestMapping("/header")
-	public String header() {
+	public String header(HttpSession session) {
+		System.out.println(session.getAttribute("User"));
 		return "main/header";
 	}
 	

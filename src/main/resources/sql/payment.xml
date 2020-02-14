@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="payment">
+
+ <select id="getbank" resultType="Map">
+ 	SELECT depositor,bank FROM bank;
+ </select>
+   
+ <select id="pickCart" parameterType="Map" resultType="Map">
+ 	SELECT c.uno,
+		 p.sname,
+		 p.price,
+		 c.quantity,
+		 (p.price * c.quantity) AS sumPrice,
+		 c.sdata,
+		 c.color,
+		 c.pno,
+		 c.`no`	as cno
+	FROM cart AS c
+	INNER JOIN product AS p
+	ON (c.pno = p.`no`)
+	INNER JOIN user AS u
+	ON (c.uno = u.`no`)
+	WHERE c.uno = #{no} 
+	AND (c.sdata = 'S' OR c.sdata = 'Y')
+ </select>
+ 
+  <insert id="setPay" parameterType="Map">
+  	INSERT INTO `order`
+		(`uno`, `pno`,`cno`, `payCB`,`color`,`quantity`,`sumPrice`,`address1`,`address2`,`address3`,`tel`)
+	VALUES 
+		(#{uno},#{pno},#{cno},#{payCB},#{color},#{quantity},#{sumPrice},#{address1},#{address2},#{address3},#{tel})
+  </insert>
+  
+  <update id="updateCart" parameterType="Map">
+  	UPDATE cart AS c
+ 		SET c.sdata = 'D' , c.ono = (SELECT `no` FROM `order` WHERE `cno` = #{cno} AND `uno` = #{uno})
+	WHERE c.`no` = #{cno} 
+  </update>
+</mapper> 
