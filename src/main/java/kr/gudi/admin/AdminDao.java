@@ -3,7 +3,7 @@ package kr.gudi.admin;
 import java.util.List;
 import java.util.Map;
 
-public interface AdminDao {
+public interface AdminDao { 
 
 	public int setbank(Map<String, Object> paramMap);
 	public List<Map<String, Object>> getOrder();
