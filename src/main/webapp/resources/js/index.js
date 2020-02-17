@@ -5,7 +5,6 @@ $(document).ready(function() {
             type: "post",
             contentType: "application/json; charset=UTF-8"
         }).done(function(data) {
-        	console.log(data);
             $("#itemArea").html(data);
         });
     }

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Repository
 public class IndexDao {
@@ -34,5 +35,13 @@ public class IndexDao {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("result", session.selectList("main.choseList", no));
 		return resultMap;
+	}
+	
+	public int setChose(Map<String, Object> paramMap) {
+		return session.insert("chose.setChose", paramMap);
+	}
+	
+	public int delChose(Map<String, Object> paramMap) {
+		return session.update("chose.delChose", paramMap);
 	}
 }

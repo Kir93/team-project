@@ -1,5 +1,5 @@
 /**
- * shoppingBasket JS
+.0 * shoppingBasket JS
  */
 $(document).ready(function() {
     $("#allchk").click(function() {
@@ -145,7 +145,7 @@ function delSelectCart(userNo) {
     }
 }
 function selectCartSend() {
-	var idx = 0;
+    var idx = 0;
     var paramList = [];
     var params;
     var chkbox = $(".order");
@@ -158,12 +158,12 @@ function selectCartSend() {
     for (var i = 0; i < $(".order").length; i++) {
         if (chkbox[i].checked === true) {
             params = {
-                cno: chkbox[i].value,
+                no: chkbox[i].value,
                 pno: pno[i].value,
                 sname: sname[i].value,
                 color: color[i].value,
                 price: price[i].value,
-                count: quantity[i].value,
+                quantity: quantity[i].value,
                 sumPrice: sumPrice[i].value
             };
             paramList[idx] = params;
@@ -171,16 +171,15 @@ function selectCartSend() {
         }
     }
     console.log(paramList);
+    return ;
     $.ajax({
-        url: "selectCartView",
+        url: "/selectCartView",
         type: "post",
         data: JSON.stringify(paramList),
         contentType: "application/json; charset=UTF-8"
-    }).done(function(data) {
-    	location.href='/main/payment';
-    }); 
-    
+    }).done(function(data) {});
 }
+
  function allselectCart(){
 	 $.ajax({
 	        url: "allselectCart",

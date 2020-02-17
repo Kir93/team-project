@@ -90,7 +90,11 @@
                 </div>
                 <div class="buy">
                     <button type="button" onclick="selectCartSend()">선택상품결제</button>
+<<<<<<< HEAD
                     <button type="button" onclick="allselectCart()">전체상품결제</button>
+=======
+                    <button type="button" onclick="location.href='./payment'">전체상품결제</button>
+>>>>>>> refs/heads/master
                 </div>
             </article>
         </section>

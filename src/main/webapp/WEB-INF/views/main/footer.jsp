@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -12,4 +9,3 @@
 		<h4>본 사이트에서 사용된 모든 이미지는 <a href="https://store.musinsa.com/">MUSINSA Store</a>에 저작권이 있습니다.</h4>
 	</footer>
 </body>
-</html>

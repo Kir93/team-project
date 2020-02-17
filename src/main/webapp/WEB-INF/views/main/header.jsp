@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-</head>
 <body>
 	<header>
 		<h1><a href="/main/index">LOGO</a></h1>
@@ -47,4 +42,3 @@
 		</c:choose>
 	</header>
 </body>
-</html>

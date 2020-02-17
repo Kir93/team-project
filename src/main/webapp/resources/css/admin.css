@@ -141,7 +141,7 @@ nav label{
 	min-width: 400px;
 }
 .hidden{
-	display: none;
+	display: none !important;
 }
 .modal hr{width:100%; margin: 0 0 1.25rem 0; display: inline-block;}
 .input_check{    

@@ -16,8 +16,8 @@
 		WHERE `soldOut` = 'N' GROUP BY a.pno ORDER BY `cnt` DESC;
 	</select>
 	<select id="choseList" resultType="Map">
-		SELECT b.*, a.sdata FROM cart AS a
+		SELECT b.* FROM chose AS a
 		INNER JOIN product AS b ON (a.pno = b.`no`)
-		WHERE (a.sdata = 'C' OR a.sdata = 'Y') AND a.uno = #{no}
+		WHERE a.delYn = 'N' AND a.uno = #{no}
 	</select>
 </mapper>

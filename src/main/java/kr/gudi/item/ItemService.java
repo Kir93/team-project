@@ -13,4 +13,8 @@ public class ItemService {
 	public Map<String, Object> itemView(int no) {
 		return id.itemView(no);
 	}
+	
+	public int setCart(Map<String, Object> paramMap) {
+		return id.setCart(paramMap);
+	}
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- <mapper namespace="cart">
+<mapper namespace="cart">
 
 	<select id="cartView" resultType="Map">
 		SELECT c.no, c.pno, c.quantity, c.color, p.sname, p.price, p.color AS colorList FROM cart AS c

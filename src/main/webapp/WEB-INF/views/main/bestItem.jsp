@@ -18,6 +18,6 @@
 		<div id="itemArea"></div>
 	</section>
 	<c:import url="/footer" />
-	<script type="text/javascript" src="/resources/js/item.js"></script>
+	<script type="text/javascript" src="/resources/js/main.js"></script>
 </body>
 </html>

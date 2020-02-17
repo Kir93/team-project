@@ -15,4 +15,8 @@ public class ItemDao {
 	public Map<String, Object> itemView(int no) {
 		return session.selectOne("item.itemView", no);
 	}
+	
+	public int setCart(Map<String, Object> paramMap) {
+		return session.insert("item.setCart", paramMap);
+	}
 }

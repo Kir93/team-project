@@ -29,6 +29,6 @@ public class CartService {
 	}
 	
 	public int delSelectCart(List<Map<String, Object>> paramList) {
-		return cd.delSelectCart(paramList); 
+		return cd.delSelectCart(paramList);
 	}
 }

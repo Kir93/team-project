@@ -17,19 +17,43 @@ $(document).ready(function() {
 });
 // 찜한목록 추가 삭제를 위한 Function
 
-function choseItem(userInfo) {
-    const items = document.querySelectorAll(".js-chose");
-    if (userInfo === undefined) {
-        alert("로그인 후 사용가능합니다.");
-        location.href = "/main/loginTeam";
+function choseItem(uno, pno, target) {
+    const item = target;
+    if (item.innerHTML == "♡") {
+        var params = {
+            uno: uno,
+            pno: pno,
+        };
+        $.ajax({
+            url: "/setChose",
+            type: "post",
+            data: JSON.stringify(params),
+            contentType: "application/json; charset=UTF-8"
+        }).done(function(data) {
+            console.log(data);
+            if (data > 0) {
+                item.innerHTML = "♥";
+                location.reload();
+            }
+        });
     } else {
-        if (items[0].innerHTML == "♡") {
-            items[0].innerHTML = "♥";
-            items[1].innerHTML = "♥";
-        } else {
-            items[0].innerHTML = "♡";
-            items[1].innerHTML = "♡";
-        }
+        var no = target.parentNode.querySelector(".no").value;
+        var params = {
+            uno: uno,
+            no: no
+        };
+        $.ajax({
+            url: "/delChose",
+            type: "post",
+            data: JSON.stringify(params),
+            contentType: "application/json; charset=UTF-8"
+        }).done(function(data) {
+            console.log(data);
+            if (data > 0) {
+                item.innerHTML = "♡";
+                location.reload();
+            }
+        });
     }
 }
 
@@ -84,19 +108,20 @@ function buyNow(userInfo) {
             var params = {
                     pno: $("#no").val(),
                     uno: userInfo,
-                    sname :$("#sname").val(),
+                    sname: $("#sname").val(),
                     price: $("#price").val(),
                     count: $(".count").val(),
                     color: $("#colorList").val()
                 };
             console.log(params);
                 $.ajax({
-                    url: "itemPay",
+                    url: "/setBuy",
                     type: "post",
                     data: JSON.stringify(params),
                     contentType: "application/json; charset=UTF-8"
                 }).done(function(data) {
-                    location.href="/main/payment";
+                    if (data > 0) location.href="/main/payment";
+                    else alert("문제가 발생했습니다.");
                 });
             }
     }
@@ -127,26 +152,3 @@ function cartNow(userInfo) {
         }
     }
 }
-
-
-//item value 결제페이지로 보내기 
-//function itemPay(){
-//	var params = {
-//			sname : $(".sname").text(),
-//			price : $(".price").text(),
-//			quantity : $(".js-count").val(),
-//			color : $("#colorList option:selected").val()
-//		};
-//	$.ajax({ 
-//		url:"itemPay",
-//		type:"POST",
-//		data: JSON.stringify(params),
-//		contentType : "application/json; charset=UTF-8"
-//	}).done(function(d){
-//		location.href='/main/payment'	
-//})
-//}
-//$(".buybtn").click(function(){
-//	itemPay();
-//});
-

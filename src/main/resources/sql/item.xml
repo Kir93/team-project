@@ -7,4 +7,8 @@
 	<select id="itemView" resultType="Map">
 		SELECT * FROM product WHERE `no` = #{no}
 	</select>
+	
+	<insert id="setCart" parameterType="Map">
+		INSERT INTO cart (pno, uno, quantity, color) VALUE (#{pno}, #{uno}, #{count}, #{color});
+	</insert>
 </mapper>
