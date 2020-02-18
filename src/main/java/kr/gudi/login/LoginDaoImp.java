@@ -18,4 +18,9 @@ public class LoginDaoImp implements LoginDao {
 		return session.selectOne("join.getUser", ub);
 	}
 
+	@Override
+	public int loginCount(Map<String, Object> paramMap) {
+		return session.insert("join.loginCount", paramMap);
+	}
+
 }

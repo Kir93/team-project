@@ -1,5 +1,6 @@
 package kr.gudi.login;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -18,17 +19,17 @@ public class LoginController {
 	
 		@Autowired private LoginService loginService;
 		
-		@Autowired private SqlSession sql;
-		
 		@RequestMapping(value = "/loginTeam", method = RequestMethod.POST)
 		public @ResponseBody boolean getUser(UserBean ub, HttpSession session){
 			Map<String, Object> userMap = loginService.getUser(ub);
 			System.out.println(userMap);
 			if(userMap != null) {
 				session.setAttribute("User", userMap);
-				session.setAttribute("Chose", sql.selectList("chose.getChose", userMap));
-				System.out.println("User : " + session.getAttribute("User"));
-				System.out.println("Chose : " + session.getAttribute("Chose"));
+				//user count
+				Map<String, Object> paramMap = new HashMap<String, Object>();
+				paramMap.put("no", userMap.get("no")); 
+				paramMap.put("name",userMap.get("name"));
+				loginService.loginCount(paramMap);
 				return true;
 			}			
 			return false;

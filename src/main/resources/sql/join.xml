@@ -8,9 +8,13 @@
   </insert>
   
   <select id="getUser"  parameterType = "kr.gudi.login.UserBean"  resultType = "Map">
-  
-  		SELECT *  FROM `user` WHERE `delYn` = 'N' AND `email` = #{email}  AND `password` = #{password} ;
-  
+  	SELECT *  FROM `user` WHERE `delYn` = 'N' AND `email` = #{email}  AND `password` = #{password} ;
   </select>
   
+  <insert id="loginCount" parameterType= "Map">
+  	INSERT INTO login
+		(`uno`,`uname`)
+	 VALUES 
+	 	(#{no},#{name})
+  </insert>
 </mapper> 

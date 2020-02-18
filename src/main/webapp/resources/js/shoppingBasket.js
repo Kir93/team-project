@@ -179,3 +179,14 @@ function selectCartSend() {
         contentType: "application/json; charset=UTF-8"
     }).done(function(data) {});
 }
+
+ function allselectCart(){
+	 $.ajax({
+	        url: "allselectCart",
+	        type: "post"
+	    }).done(function(data) {
+	    	location.href='/main/payment';
+	    }); 
+	 
+ }
+

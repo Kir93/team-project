@@ -16,4 +16,9 @@ public class LoginServiceImp implements LoginService {
 		return loginDao.getUser(ub);
 	}
 
+	@Override
+	public int loginCount(Map<String, Object> paramMap) {
+		return loginDao.loginCount(paramMap);
+	}
+
 }

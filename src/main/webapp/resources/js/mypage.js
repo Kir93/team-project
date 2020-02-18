@@ -1,9 +1,10 @@
+  
 
 /* Mypage
  * */
     	function ck(){
     		var regExp = /^\d{3}\d{3,4}\d{4}$/;
-    		var txt = document.getElementById("number").value;
+    		var txt = document.getElementById("tel").value;
     		if(regExp.test(txt)){
     			alert("OK");
     		} else {
@@ -49,8 +50,8 @@
                     }
 
                     // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                    document.getElementById('sample4_postcode').value = data.zonecode;
-                    document.getElementById("sample4_roadAddress").value = roadAddr;
+                    document.getElementById('address1').value = data.zonecode;
+                    document.getElementById("address2").value = roadAddr;
               //      document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
                     
                     // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
